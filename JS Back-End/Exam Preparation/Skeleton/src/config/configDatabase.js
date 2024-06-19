@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-// TODO import models
+require('../models/User');
+require('../models/Data'); // TODO import real data model
 
 async function configDatabase() {
   // TODO set database name
