@@ -8,49 +8,43 @@ async function start() {
 
   console.log('Database connected');
 
-  // const myPerson = new Person({
-  //   name: 'Stoyan',
-  //   age: 52,
-  //   hobbies: ['Hand knitting'],
-  //   contacts: {
-  //     tel: '+359 0895 303235',
-  //     email: 'maria@abv.bg',
-  //     address: {
-  //       city: 'Sofia',
-  //       street: 'Pirotska',
-  //       streetNumber: 20
-  //     }
-  //   }
-  // });
-
-  // await myPerson.save();
-
   const myPerson = await Person.findOne({ firstName: 'Marina' });
-  // myPerson.name = 'Marina';
-  // await myPerson.save();
   console.log(myPerson.sayHello());
   console.log(myPerson.fullName);
+ 
+  myPerson.firstName = 'P';
+  myPerson.age = -1;
 
-  myPerson.fullName = 'Marina Delcheva';
-  await myPerson.save();
-  console.log(myPerson.fullName);
+  const newPerson = new Person({
+    firstName: 'D',
+    lastName: 'PeshevsPesheva',
+    
+    height: 35,
+    hobbies: ['Hiking', 'Reading'],
+    contacts: {
+      tel: '+359 0898 123455',
+      address: {
+        city: 'Sofia',
+        street: 'Polsko tcvete',
+        streetNumber: 16
+      }
+    }
+  });
 
-  // const personStoyan = await Person.findOne({ name: 'Stoyan' });
-  // personStoyan.contacts.tel = '+359 0887 102030';
-  // personStoyan.contacts.email = 'stoyan@abv.bg';
-  // await personStoyan.save();
+  try {
+    await newPerson.save();
+    await myPerson.save();
+  } catch(err) {
+    for (const path in err.errors) {
+      console.log(err.errors[path].properties);
+    }
+  }
 
   const people = await Person.find({});
 
-  console.log(people);
-
-  // // можем директно да променяме обекта, който сме получили от базата, но трябва да го сейвнем
-  // people[0].hobbies.push('hiking');
-  // await people[0].save();
-
   // console.log(people);
 
-  mongoose.disconnect;
+  mongoose.disconnect();
 }
 
 start();

@@ -13,12 +13,42 @@ const contactInfoSchema = new mongoose.Schema({
 });
 
 const personSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  age: Number,
-  hobbies: [String],
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true,
+    minLength: [2, 'Last name must be between 2 and 10 symbol long!'],
+    maxLength: [10, 'Last name must be between 2 and 10 symbol long!'],
+  },
+  age: {
+	  type: Number,
+    required: true,
+	  min: 0,
+	  max: 199
+	},
+  height: {
+    type: Number,
+    // {VALUE} е специално, предефинирано пропърти, което връща подадената от потребителя стойност
+    min: [40, 'Height may not be under 40sm (current value is {VALUE})'],
+	  max: 299
+  },
+  hobbies: {
+    type: [String],
+    enum: {
+      values: ['Hiking', 'Skiing', 'Biking'],
+      message: 'Unacceptable hobby'
+    }
+  },
   contacts: contactInfoSchema
 });
+
+// НЕ трябва да е ламбда функция!!!
+personSchema.path('firstName').validate(function(value) {   
+  return value.length >= 2 && value.length <= 10;
+}, 'First name must be between 2 and 10 symbol long!' );
 
 /*
   Adding methods - важно е да не е arrow function, т.к. тя няма собствен контекст, 
