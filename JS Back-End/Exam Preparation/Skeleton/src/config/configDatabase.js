@@ -6,10 +6,7 @@ async function configDatabase() {
   // TODO set database name
   const connectionString = 'mongodb://localhost:27017/exam-db';
 
-  await mongoose.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
+  await mongoose.connect(connectionString);
 
   console.log('Database connected');
 }

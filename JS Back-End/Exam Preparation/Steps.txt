@@ -1,0 +1,66 @@
+1. Инициализация на приложението
+   npm init -y
+
+2. Инсталираме пакети
+   npm i express
+	 express-handlebars
+	 express-validator
+	 bcrypt
+	 mongoose
+	 jsonwebtoken
+	 cookie-parser
+
+3. npm i --save-dev nodemon
+
+4. Създаваме основни папки и файлове
+  4.1. src
+	> config
+	> controllers
+	> middlewares
+	> modes
+	> services
+	index.js
+  4.2. views
+	> layouts
+	home.hbs
+
+5. Създаваме конфигурации
+   in index.js - създаваме express, 
+	       - извикваме start();
+	       - създаваме асинхронна start функция в която създаваме app и извикваме долните конфигурции като първо е базата, която изчакваме (await) и после другите в изброения ред.
+   configDatabase.js
+   configHbs.js
+   configExpress.js
+   configRouters.js
+
+6. Models
+   Data.js
+   User.js
+
+7. Services
+  7.1. user
+	regidter:
+	- проверка дали потребителя съществува 
+	   = ДА -  хръляме грешка
+	   = НЕ -  хешираме парола, създаваме записа и връщаме новосъздадения запис
+   Тогава контролера ще създава СЕСИЯТА на базата на това, к. ние смем му върнали
+
+8.   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

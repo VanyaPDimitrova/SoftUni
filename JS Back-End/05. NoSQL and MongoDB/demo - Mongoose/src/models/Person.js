@@ -38,7 +38,7 @@ const personSchema = new mongoose.Schema({
   hobbies: {
     type: [String],
     enum: {
-      values: ['Hiking', 'Skiing', 'Biking'],
+      values: ['Hiking', 'Skiing', 'Biking', 'Reading'],
       message: 'Unacceptable hobby'
     }
   },

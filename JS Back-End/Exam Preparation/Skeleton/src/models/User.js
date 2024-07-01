@@ -14,7 +14,7 @@ const userSchema = new Schema({
   }
 }, {
   collation: {
-    locate: 'us',
+    locale: 'en',
     strength: 2
   }
 });
