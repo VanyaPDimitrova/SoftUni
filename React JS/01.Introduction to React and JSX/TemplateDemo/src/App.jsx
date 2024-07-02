@@ -5,10 +5,10 @@ import Download from './components/Download';
 import Faq from './components/Faq';
 import Feature from './components/Feature';
 import Footer from './components/Footer';
-import Navigation from './components/Navigation';
 import Team from './components/Team';
 import Testimonial from './components/Testimonial';
 import VideoSection from './components/VideoSection';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
