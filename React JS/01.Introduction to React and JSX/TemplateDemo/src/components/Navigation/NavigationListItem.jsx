@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function NavItem({ scroll, text }) {
+function NavigationListItem({ scroll, text }) {
   return (
     <>
       <li className="nav-item">
@@ -11,4 +11,4 @@ function NavItem({ scroll, text }) {
   );
 }
 
-export default NavItem;
+export default NavigationListItem;

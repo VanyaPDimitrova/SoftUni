@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function Navbar(props) {
+function NavigationList(props) {
   return (
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav ml-auto">
@@ -9,4 +9,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default NavigationList;

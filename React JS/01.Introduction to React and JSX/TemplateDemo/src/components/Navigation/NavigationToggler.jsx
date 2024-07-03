@@ -1,4 +1,4 @@
-function NavbarToggler() {
+function NavigationToggler() {
   return (
     <button 
     className="navbar-toggler" 
@@ -14,4 +14,4 @@ function NavbarToggler() {
   );
 }
 
-export default NavbarToggler;
+export default NavigationToggler;

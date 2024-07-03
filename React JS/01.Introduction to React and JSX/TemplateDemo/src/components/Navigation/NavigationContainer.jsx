@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function NavContainer(props) {
+function NavigationContainer(props) {
   return (
     <nav className="navbar navbar-expand-lg">
         <div className="container"> 
@@ -9,4 +9,4 @@ function NavContainer(props) {
   );
 }
 
-export default NavContainer;
+export default NavigationContainer;

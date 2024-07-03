@@ -1,26 +1,26 @@
-import NavItem from "./NavItem";
-import Navbar from "./Navbar";
+import NavigationListItem from "./NavigationListItem";
+import NavigationList from "./NavigationList";
 import Logo from "./Logo";
-import NavbarToggler from "./NavbarToggler";
-import NavContainer from "./NavContainer";
+import NavigationToggler from "./NavigationToggler";
+import NavigationContainer from "./NavigationContainer";
 
 function Navigation() {
   return (
-    <NavContainer>
+    <NavigationContainer>
       <Logo />
 
-      <NavbarToggler />
+      <NavigationToggler />
 
-      <Navbar>
-        <NavItem scroll="0" text="Home" />
-        <NavItem scroll="1" text="About" />
-        <NavItem scroll="2" text="Features" />
-        <NavItem scroll="3" text="Team" />
-        <NavItem scroll="4" text="Testimonials" />
-        <NavItem scroll="5" text="Faq" />
-        <NavItem scroll="6" text="Contact" />
-      </Navbar>
-    </NavContainer>
+      <NavigationList>
+        <NavigationListItem scroll="0" text="Home" />
+        <NavigationListItem scroll="1" text="About" />
+        <NavigationListItem scroll="2" text="Features" />
+        <NavigationListItem scroll="3" text="Team" />
+        <NavigationListItem scroll="4" text="Testimonials" />
+        <NavigationListItem scroll="5" text="Faq" />
+        <NavigationListItem scroll="6" text="Contact" />
+      </NavigationList>
+    </NavigationContainer>
   );
 }
 
