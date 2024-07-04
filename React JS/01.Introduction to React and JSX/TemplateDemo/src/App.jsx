@@ -1,4 +1,4 @@
-import About from './components/About';
+import About from './components/About/About';
 import Banner from './components/Banner';
 import Contact from './components/Contact';
 import Download from './components/Download';
