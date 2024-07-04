@@ -1,5 +1,5 @@
 import About from './components/About/About';
-import Banner from './components/Banner';
+import Banner from './components/Banner/Banner';
 import Contact from './components/Contact';
 import Download from './components/Download';
 import Faq from './components/Faq';

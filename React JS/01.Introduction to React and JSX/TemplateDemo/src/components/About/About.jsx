@@ -1,13 +1,13 @@
-import AboutContainer from "./AboutContainer";
+import AboutSection from './AboutSection';
 import AboutContent from "./AboutContent";
 import AboutHeader from "./AboutHeader";
 
 function About() {
     return (
-        <AboutContainer>
+        <AboutSection>
             <AboutHeader />
             <AboutContent />
-        </AboutContainer>
+        </AboutSection>
     );
 }
 

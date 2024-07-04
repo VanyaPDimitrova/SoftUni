@@ -131,7 +131,7 @@ h6 {
 .banner-text p {
 	margin:40px 0px;
 }
-.banner-text ul {
+/* .banner-text ul {
 	list-style: none;
 }
 .banner-text ul li {
@@ -142,6 +142,20 @@ h6 {
 	display: block;
 }
 .banner-text ul li a img {
+	width: 150px;
+	border-radius: 7px;
+} */
+.banner-list ul {
+	list-style: none;
+}
+.banner-list ul li {
+	display: inline-block;
+	margin: 0px 10px 10px 0px;
+}
+.banner-list ul li a {
+	display: block;
+}
+.banner-list ul li a img {
 	width: 150px;
 	border-radius: 7px;
 }
@@ -530,7 +544,11 @@ h3 {
 .banner-text p {
 	margin: 25px 0px;
 }
-.banner-text ul li a img {
+/* .banner-text ul li a img {
+	width: 140px;
+	border-radius: 7px;
+} */
+.banner-list ul li a img {
 	width: 140px;
 	border-radius: 7px;
 }

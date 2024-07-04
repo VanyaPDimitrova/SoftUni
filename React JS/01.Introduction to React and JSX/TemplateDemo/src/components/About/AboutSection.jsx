@@ -1,4 +1,4 @@
-function AboutContainer(props) {
+function AboutSection(props) {
     return (
         <section className="about section-padding prelative" data-scroll-index='1'>
             <div className="container">
@@ -12,4 +12,4 @@ function AboutContainer(props) {
     );
 }
 
-export default AboutContainer;
+export default AboutSection;
