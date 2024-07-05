@@ -15,6 +15,7 @@ function TestimonialContent() {
                             testimonials.map(testimonial => {
                                 return (
                                     <TestimonialSliderItem 
+                                        key={testimonial.id}
                                         name={testimonial.name}
                                         src={testimonial.src}
                                         position={testimonial.position}
