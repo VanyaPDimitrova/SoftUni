@@ -1,23 +1,20 @@
-import AboutContent from "./AboutContent";
-import SectionHeader from '../common/SectionHeader';
 import Section from '../common/Section';
+import SectionHeader from '../common/SectionHeader';
+import FeatureContent from './FeatureContent';
 
-function About() {
+function Feature() {
     return (
         <Section
-            section="about"
-            dataScrollIndex="1" 
-            sectionClass="prelative"
+            section="feature"
+            dataScrollIndex="2"
         >
             <SectionHeader 
-                header="About"
+                header="Features"
                 text="Sed quis nisi nisi. Proin consectetur porttitor dui sit amet viverra. Fusce sit amet lorem faucibus, vestibulum ante in, pharetra ante."
             />
-            <AboutContent />
+            <FeatureContent />
         </Section>
-   
-     
     );
 }
 
-export default About;
+export default Feature;
