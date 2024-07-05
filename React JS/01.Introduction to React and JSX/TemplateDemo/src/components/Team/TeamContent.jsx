@@ -5,7 +5,7 @@ import TeamContentCard from './TeamContentCard';
 
 function TeamContent() {
     return (
-        <SectionContent>
+        <SectionContent classText="text-center">
             <Row>
                 <Column classColumn="col-md-4">
                     <TeamContentCard 

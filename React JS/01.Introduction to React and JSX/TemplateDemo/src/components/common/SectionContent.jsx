@@ -1,6 +1,6 @@
-function SectionContent({ children }) {
+function SectionContent({ children, classText }) {
     return (
-        <div className="section-content text-center">
+        <div className={`section-content ${classText}`}> //"section-content text-center"
             {children}
         </div>
     );

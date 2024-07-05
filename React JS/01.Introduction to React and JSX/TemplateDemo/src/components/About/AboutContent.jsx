@@ -1,9 +1,12 @@
+import Row from '../common/Row';
+import SectionContent from '../common/SectionContent';
+import AboutButton from './AboutButton';
 import AboutContentCard from './AboutContentCard';
 
 function AboutContent() {
     return (
-        <div className="section-content text-center">
-            <div className="row">
+        <SectionContent classText="text-center">
+            <Row>
                 <AboutContentCard 
                     dataWowDelay="0.2s" 
                     iClass="fa fa-life-ring" 
@@ -22,9 +25,10 @@ function AboutContent() {
                     header="Fast" 
                     description = "Phasellus lobortis justo a magna facilisis, in commodo tellus rutrum. Sed vitae condimentum nulla."
                 />
-            </div>
-            <a href="#" className="about-btn">Learn More</a> 
-        </div>
+            </Row>
+            <AboutButton />
+        </SectionContent>
+
     );
 }
 

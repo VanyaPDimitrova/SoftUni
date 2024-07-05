@@ -7,7 +7,7 @@ import FeatureContentMobile from './FeatureContentMobile';
 
 function FeatureContent() {
     return (
-        <SectionContent>
+        <SectionContent classText="text-center">
             <Row>
                 <Column classColumn="col-md-4 col-sm-12" >
                     <FeatureContentMediaLeftColumn 
