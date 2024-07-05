@@ -6,7 +6,7 @@ import Faq from './components/Faq';
 import Feature from './components/Feature/Feature';
 import Footer from './components/Footer';
 import Team from './components/Team/Team';
-import Testimonial from './components/Testimonial';
+import Testimonial from './components/Testimonial/Testimonial';
 import VideoSection from './components/VideoSection';
 import Navigation from './components/Navigation/Navigation';
 
