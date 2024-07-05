@@ -2,7 +2,7 @@ import About from './components/About/About';
 import Banner from './components/Banner/Banner';
 import Contact from './components/Contact';
 import Download from './components/Download';
-import Faq from './components/Faq';
+import Faq from './components/Faq/Faq';
 import Feature from './components/Feature/Feature';
 import Footer from './components/Footer';
 import Team from './components/Team/Team';
