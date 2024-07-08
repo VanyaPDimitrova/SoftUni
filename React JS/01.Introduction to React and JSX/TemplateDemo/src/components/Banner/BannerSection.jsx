@@ -1,7 +1,7 @@
-function BannerSection(props) {
+function BannerSection({ children }) {
     return (
         <section className="banner" data-scroll-index='0'>
-            {props.children}
+            {children}
         </section>
     );
 }

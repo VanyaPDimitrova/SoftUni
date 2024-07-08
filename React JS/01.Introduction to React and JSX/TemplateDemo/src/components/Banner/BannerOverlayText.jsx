@@ -1,15 +1,13 @@
+import DownloadApp from '../common/DownloadApp';
 import BannerOverlayTextContent from './BannerOverlayTextContent';
-import BannerOverlayTextList from './BannerOverlayTextList';
-import BannerOverlayTextListItem from './BannerOverlayTextListItem';
 
 function BannerOverlayText() {
     return (
         <div className="col-md-8 col-sm-12">
-            <BannerOverlayTextContent />            
-            <BannerOverlayTextList>
-                <BannerOverlayTextListItem src="images/appstore.png" dateWowDelay="0.4s" />
-                <BannerOverlayTextListItem src="images/playstore.png" dateWowDelay="0.7s" />
-            </BannerOverlayTextList>
+            <BannerOverlayTextContent /> 
+            <div className='banner-list'>
+                <DownloadApp />
+            </div>           
         </div>
     );
 }

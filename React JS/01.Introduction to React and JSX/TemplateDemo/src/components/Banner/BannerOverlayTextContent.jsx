@@ -4,12 +4,7 @@ function BannerOverlayTextContent() {
             <h2 className="white">Best App Website Template</h2>
             <h6 className="white">
                 This awesome template designed by 
-                <a 
-                    href="http://w3Template.com" 
-                    target="_blank" 
-                    rel="dofollow" 
-                    className="weblink"
-                >
+                <a href="http://w3Template.com" target="_blank" rel="dofollow" className="weblink">
                     W3 Template
                 </a>
                     .
