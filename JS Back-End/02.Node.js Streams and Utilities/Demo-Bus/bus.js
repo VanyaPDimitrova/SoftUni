@@ -1,12 +1,12 @@
-let subscriber = null;
+let subscribers = [];
 
 function subscribe(callback) {
-    subscriber = callback;
+    subscribers.push(callback);
 };
 
 function publish(message) {
-    if (typeof subscriber == 'function') {
-        console.log('Dispatching message');
+    for (const subscriber of subscribers) {
+        console.log('Dispatching messages');
         subscriber(message);
     }
 };
