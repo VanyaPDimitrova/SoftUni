@@ -9,6 +9,16 @@ function subscribe(type, callback) {
     subscribers[type].push(callback);
 };
 
+function unsubscribe(type, callback) {
+    if (!subscribers[type]) {
+        return;
+    }
+
+    console.log('Removing subscriber');
+    const index = subscribers[type].indexOf(callback);
+    subscribers[type].splice(index, 1);
+}
+
 function publish(type, message) {
     if (!subscribers[type]) {
         return;
@@ -22,5 +32,6 @@ function publish(type, message) {
 
 module.exports = {
     subscribe,
+    unsubscribe,
     publish
 };

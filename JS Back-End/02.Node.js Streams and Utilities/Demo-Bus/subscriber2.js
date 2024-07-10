@@ -1,7 +1,11 @@
-const { subscribe } = require('./bus');
+const { subscribe, unsubscribe } = require('./bus');
 
 function start() {
     subscribe('login', onMessage);
+}
+
+function unsub() {
+    unsubscribe('login', onMessage);
 }
 
 function onMessage(data) {
@@ -9,5 +13,6 @@ function onMessage(data) {
 }
 
 module.exports = {
-    start
+    start,
+    unsub
 }
