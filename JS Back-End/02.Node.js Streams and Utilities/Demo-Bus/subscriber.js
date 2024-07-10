@@ -1,7 +1,8 @@
-const { subscribe } = require('./bus');
+// const { subscribe } = require('./bus');
+const { emitter } = require('./emitter');
 
 function start() {
-    subscribe('ping', onMessage);
+    emitter.on('ping', onMessage);
 }
 
 function onMessage(data) {

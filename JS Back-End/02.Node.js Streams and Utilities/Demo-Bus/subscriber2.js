@@ -1,11 +1,12 @@
-const { subscribe, unsubscribe } = require('./bus');
+// const { subscribe, unsubscribe } = require('./bus');
+const { emitter } = require('./emitter');
 
 function start() {
-    subscribe('login', onMessage);
+    emitter.on('login', onMessage);
 }
 
 function unsub() {
-    unsubscribe('login', onMessage);
+    emitter.off('login', onMessage);
 }
 
 function onMessage(data) {

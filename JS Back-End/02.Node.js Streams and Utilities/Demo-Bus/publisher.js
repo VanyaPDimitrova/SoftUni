@@ -1,11 +1,12 @@
-const { publish } = require('./bus');
+// const { publish } = require('./bus');
+const { emitter } = require('./emitter');
 
 function start() {
     const data = [1, 2, 3];
 
     console.log('Publishing data');
-    publish('ping', data);
-    publish('login', {
+    emitter.emit('ping', data);
+    emitter.emit('login', {
         user: 'Peter',
         password: '123456'
     });
