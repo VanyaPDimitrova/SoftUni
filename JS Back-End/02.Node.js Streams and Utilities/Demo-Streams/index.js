@@ -1,21 +1,7 @@
+const fs = require('fs');
 const { createServer } = require('http');
 
-const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST">
-        <h1>Send data to server</h1>
-        <p>Username: <input name="username"></p>
-        <p>Password: <input name="password" type="password"></p>
-        <input type="submit" value="Sign in">
-    </form>
-</body> 
-</html>`;
+const html = fs.readFileSync('./index.html');
 
 createServer((req, res) => {
     if (req.method == 'GET') {
