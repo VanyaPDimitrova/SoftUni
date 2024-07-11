@@ -14,5 +14,5 @@ const fs = require('fs');
 // });
 
 //3. // pipe dos both from 2. - read from terminal and write in to file. But it delete file content. It do not writes in the end of file. 
-const writer = fs.createWriteStream('./output.txt');
+const writer = fs.createWriteStream('./readingUserInput/output.txt');
 process.stdin.pipe(writer);
