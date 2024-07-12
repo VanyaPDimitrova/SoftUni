@@ -13,10 +13,8 @@ http.createServer((req, res) => {
 
     if (typeof route == 'function') {
         route(req, res);
-        
         return;
     } else if(staticFileHandler(req, res)) {  
-        
         return;
     }
 
