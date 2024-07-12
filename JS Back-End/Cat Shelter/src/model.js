@@ -9,8 +9,9 @@ async function readData() {
     return data;
 }
 
+// null, 2 in JSON.stringify format file where writes
 async function writeData(data) {
-    const jsonData = JSON.stringify(data);
+    const jsonData = JSON.stringify(data, null, 2);
     await fs.writeFile(fileName, jsonData);
 }
 
