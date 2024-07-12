@@ -24,23 +24,9 @@ async function postCatHandler(req, res) {
 
     req.on('data', (chunk) => data += chunk.toString());
     req.on('end', () => {
-        // Do something with data
-        console.log(data);
+        const formData = new URLSearchParams(data);
+        console.log(formData);
         // console.log(new URLSearchParams(data));
-    });
-
-    res.statusCode = 204;
-    res.end();
-}
-
-async function postBreedHandler(req, res) {
-    let data = '';
-
-    req.on('data', (chunk) => data += chunk.toString());
-    req.on('end', () => {
-        // Do something with data
-        console.log(data);
-        console.log(new URLSearchParams(data));
     });
 
     res.statusCode = 204;

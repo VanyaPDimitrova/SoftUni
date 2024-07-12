@@ -10,7 +10,8 @@ async function readData() {
 }
 
 async function writeData(data) {
-    await fs.writeFile(fileName, JSON.stringify(data));
+    const jsonData = JSON.stringify(data);
+    await fs.writeFile(fileName, jsonData);
 }
 
 async function getCats() {
@@ -27,14 +28,14 @@ async function addCats(cat) {
     const data = await readData();
     data.cats.push(cat);
 
-    writeData(data);
+    await writeData(data);
 }
 
 async function addBreed(breed) {
     const data = await readData();
     data.breeds.push(breed);
 
-    writeData(data);
+    await writeData(data);
 }
 
 module.exports = {
