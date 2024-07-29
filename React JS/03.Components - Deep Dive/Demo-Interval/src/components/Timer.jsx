@@ -1,20 +1,29 @@
 import { useEffect, useState } from 'react';
 
 function Timer() {
+    console.log('Render Timer');
     const [time, setTime] = useState(0);
     const [tens, setTens] = useState(0);
 
     useEffect(() => {
+        console.log('useEffect');
         const interval = setInterval(() => {
-            console.log('interval');
+            console.log('setInterval');
             setTime(time => time + 1);
         }, 1000);
 
         if (time % 10 == 0 && time > 0) {
+            console.log('setTens');
             setTens(tens => tens + 10);
         }
 
-        return () => clearInterval(interval);
+        return () => {
+            console.log('clearInterval');
+            if (time == 20) {
+                setTime(() => 1);
+            }
+            clearInterval(interval);
+        };
     }, [time]); 
 
 
