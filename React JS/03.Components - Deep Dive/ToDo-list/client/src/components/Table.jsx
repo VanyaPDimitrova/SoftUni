@@ -17,21 +17,19 @@ function Table() {
     }, []);
 
     const changeStatusHandler = (id) => {
-        console.log(id);
         setTodos(todos => 
-            todos.map(todo => todo._id === id 
-                                ? {...todo, isCompleted: !todo.isCompleted} 
-                                : todo
-                     )
+            todos.map(todo => 
+                        todo._id === id 
+                            ? {...todo, isCompleted: !todo.isCompleted} 
+                            : todo
+                    )
         )
     }
-
 
     return (
         <>
             <div className="table-wrapper">
 
-                {/* Loading spinner - show the load spinner when fetching the data from the server */}
                 {isLoading && <Loader />}
 
                 <table className="table">
@@ -56,7 +54,7 @@ function Table() {
                         
                     </tbody>
                 </table>
-                </div>
+            </div>
         </>
     );
 }
