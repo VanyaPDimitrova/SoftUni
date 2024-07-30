@@ -15,7 +15,20 @@ function UserSection() {
         .catch(err => console.log(err));
     }, []);
 
-    console.log(users);
+    // useEffect(() => {
+    //     (async function getUsers() {
+    //         try {
+    //             const response = await fetch(`${baseUrl}/users`);
+    //             const result = await response.json();
+    //             const data = Object.values(result);
+    
+    //             setUsers(data);
+    //         } catch(err) {
+    //             console.log(err);
+    //         }
+    //     })();
+    // }, []);
+
 
     return (
         <>
