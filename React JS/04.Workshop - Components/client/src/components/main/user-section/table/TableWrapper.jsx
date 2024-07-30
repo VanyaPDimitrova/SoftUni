@@ -4,9 +4,9 @@ import Table from './Table';
 function TableWrapper({ users }) {
     return (
         <div className="table-wrapper">
-            {/* {users && 
+            {users.length === 0 && 
                 <Loading />
-            } */}
+            }
 
             <Table users={users} />
         </div>
