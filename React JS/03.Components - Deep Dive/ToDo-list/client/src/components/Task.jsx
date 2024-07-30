@@ -1,10 +1,10 @@
 
-function Task({ className, task, status }) {
+function Task({ id, isCompleted, task }) {
     return (
         <>
-            <tr className={className}>
+            <tr key={id} className={isCompleted ? 'todo is-completed' : 'todo'}>
                 <td>{task}</td>
-                <td>{status}</td>
+                <td>{isCompleted ? 'Complete' : 'Incomplete'}</td>
                 <td className="todo-action">
                     <button className="btn todo-btn">Change status</button>
                 </td>
