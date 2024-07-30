@@ -1,11 +1,28 @@
+import { useEffect, useState } from 'react';
 import Task from './Task';
+import { getAllTodos } from '../services/todos';
+import Loader from './Loader';
 
 function Table() {
+    const [todos, setTodos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        getAllTodos()
+            .then((data) => {
+                setTodos(Object.values(data));
+                setIsLoading(false);
+            })
+            .catch((err) => console.log(err));
+    }, []);
+
+
     return (
         <>
             <div className="table-wrapper">
 
                 {/* Loading spinner - show the load spinner when fetching the data from the server */}
+                {isLoading && <Loader />}
 
                 <table className="table">
                     <thead>
@@ -18,8 +35,13 @@ function Table() {
 
                     <tbody>
 
-                        <Task className='todo is-completed' task='Give dog a bath' status='Complete' />
-                        <Task className='todo' task='Vacuum floor' status='Incomplete' />
+                        {todos.map(todo => 
+                            <Task 
+                                key={todo._id} 
+                                isCompleted={todo.isCompleted} 
+                                task={todo.text} 
+                            />
+                        )}
                         
                     </tbody>
                 </table>
