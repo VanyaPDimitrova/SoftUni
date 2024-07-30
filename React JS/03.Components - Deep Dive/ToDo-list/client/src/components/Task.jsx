@@ -1,12 +1,14 @@
 
-function Task({ id, isCompleted, task }) {
+function Task({ isCompleted, task, changeStatusHandler }) {
+    const changeStatos = isCompleted => !isCompleted;
+
     return (
         <>
-            <tr key={id} className={isCompleted ? 'todo is-completed' : 'todo'}>
+            <tr className={isCompleted ? 'todo is-completed' : 'todo'} >
                 <td>{task}</td>
                 <td>{isCompleted ? 'Complete' : 'Incomplete'}</td>
                 <td className="todo-action">
-                    <button className="btn todo-btn">Change status</button>
+                    <button className="btn todo-btn" onClick={changeStatusHandler}>Change status</button>
                 </td>
             </tr>
         </>

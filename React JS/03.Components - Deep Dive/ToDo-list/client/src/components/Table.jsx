@@ -16,6 +16,16 @@ function Table() {
             .catch((err) => console.log(err));
     }, []);
 
+    const changeStatusHandler = (id) => {
+        console.log(id);
+        setTodos(todos => 
+            todos.map(todo => todo._id === id 
+                                ? {...todo, isCompleted: !todo.isCompleted} 
+                                : todo
+                     )
+        )
+    }
+
 
     return (
         <>
@@ -40,6 +50,7 @@ function Table() {
                                 key={todo._id} 
                                 isCompleted={todo.isCompleted} 
                                 task={todo.text} 
+                                changeStatusHandler={() => changeStatusHandler(todo._id)}
                             />
                         )}
                         
