@@ -46,5 +46,25 @@
       "street": "456 Elm St",
       "streetNumber": "7"
     }
+  },
+  "ff9d541e-2346-4013-97ca-d5bfc4ebe75f": {
+    "firstName": "Vanya",
+    "lastName": "Dimitrova",
+    "email": "vanya@yahoo.com",
+    "phoneNumber": "0888563214",
+    "imageUrl": "https://softuni.bg/users/profile/showavatar/b2937729-2295-441e-a916-3b826adcd574",
+    "country": "България",
+    "city": "София",
+    "street": "Бигла",
+    "streetNumber": "13",
+    "createdAt": "2024-07-31T15:48:08.128Z",
+    "updatedAt": "2024-07-31T15:48:08.128Z",
+    "_id": "ff9d541e-2346-4013-97ca-d5bfc4ebe75f",
+    "address": {
+      "country": "Canada",
+      "city": "Toronto",
+      "street": "456 Elm St",
+      "streetNumber": "7"
+    }
   }
 }

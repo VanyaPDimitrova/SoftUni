@@ -3,7 +3,7 @@ import UserSection from './user-section/UserSection';
 import CreateUserModal from './user-modals/CreateUserModal';
 import UserDetailsModal from './user-modals/UserDetailsModal';
 import DeleteUserModal from './user-modals/DeleteUserModal';
-import { createNewUser } from '../../services/users';
+import { createNewUser, deleteUserById } from '../../services/users';
 
 function Main() {
     const [isCreateUserModalOpen, setIsCreateUserModalOpen] = useState(false);
@@ -11,6 +11,7 @@ function Main() {
     const [isUserDetailsModalOpen, setIsUserDetailsModalOpen] = useState(false);
     const [userDetails, setUserDetails] = useState({});
     const [isDeleteUserModalOpen, setIsDeleteUserModalOpen] = useState(false);
+    const [userToBeDeletedId, setUserToBeDeletedId] = useState(false);
     const [deleteUserId, setDeleteUserId] = useState('');
 
     function openUserDetailsModal(user) {
@@ -20,27 +21,45 @@ function Main() {
 
     function openDeleteUserModal(userId) {
         setIsDeleteUserModalOpen(true);
-        setDeleteUserId(userId);
+        setUserToBeDeletedId(userId);
     }
     
-    function deleteUser() {
-        console.log(deleteUserId);
+    async function deleteUser() {
+        const deleteUserId = await deleteUserById(userToBeDeletedId);
+
+        setDeleteUserId(deleteUserId._id);
+
         setIsDeleteUserModalOpen(false);
     }
 
-    const createUser = async (e) => {
+    async function createUser(e) {
         // prevent refresh
         e.preventDefault();
 
         // get user data
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData);
-        const userDataWithDates = {...userData, createdAt: new Date(), updatedAt: new Date()};
 
-        const newUSer = await createNewUser(userDataWithDates);
+        const newUserObject = {
+            firstName: userData.firstName,
+            lastName: userData.lastName,
+            email: userData.email,
+            phoneNumber: userData.phoneNumber,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            imageUrl: userData.imageUrl,
+            address: {
+                country: userData.country,
+                city: userData.city,
+                street: userData.street,
+                streetNumber: userData.streetNumber
+            }
+        }
+
+        const newUser = await createNewUser(newUserObject);
 
         // update local state
-        setNewUser(newUSer);
+        setNewUser(newUser);
 
         // close modal
         setIsCreateUserModalOpen(false);

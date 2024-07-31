@@ -23,7 +23,10 @@ function UserSection({
                 setUsers(Object.values(data));
                 setShowLoader(false);
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                setShowLoader(false);
+                console.log(err);
+            });
     }, []);
 
     /*
@@ -43,8 +46,14 @@ function UserSection({
     */
 
     useEffect(() => {
-        setUsers(users => [...users, newUser]);
-    }, [newUser])
+        if (Object.keys(newUser).length != 0) {
+            setUsers(users => [...users, newUser]);
+        }
+    }, [newUser]);
+
+    useEffect(() => {
+        setUsers(users => users.filter(user => user._id !== deleteUserId));
+    }, [deleteUserId]);
 
 
     return (

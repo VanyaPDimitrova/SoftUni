@@ -15,13 +15,13 @@ export const createNewUser = (userData) => {
     }).then((res) => res.json());
 }
 
-export const deleteUserById = (id) => {
-    return fetch(`${BASE_URL}/users/${id}`, {
+export const deleteUserById = (userId) => {
+    return fetch(`${BASE_URL}/users/${userId}`, {
         method: 'DELETE',
     }).then(res => res.json());
 } 
 
-export const updateUser = (id) => {
-    return fetch(`${BASE_URL}/users/${id}`)
+export const updateUser = (userId) => {
+    return fetch(`${BASE_URL}/users/${userId}`)
 }
 
