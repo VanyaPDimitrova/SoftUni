@@ -1,10 +1,10 @@
 import Loading from './Loading';
 import Table from './Table';
 
-function TableWrapper({ users }) {
+function TableWrapper({ users, showLoader }) {
     return (
         <div className="table-wrapper">
-            {users.length === 0 && 
+            {showLoader && 
                 <Loading />
             }
 

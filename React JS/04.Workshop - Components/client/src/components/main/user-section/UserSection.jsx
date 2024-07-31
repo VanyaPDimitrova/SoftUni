@@ -9,11 +9,16 @@ function UserSection({
     openCreateUserModal,
 }) {
     const [users, setUsers] = useState([]);
+    const [showLoader, setShowLoader] = useState(false);
 
     useEffect(() => {
+        setShowLoader(true);
         fetch(`${baseUrl}/users`)
         .then(res => res.json())
-        .then(data => setUsers(Object.values(data)))
+        .then(data => {
+            setUsers(Object.values(data));
+            setShowLoader(false);
+        })
         .catch(err => console.log(err));
     }, []);
 
@@ -40,7 +45,7 @@ function UserSection({
 
                 <TableSearchBar />
 
-                <TableWrapper users={users} />
+                <TableWrapper users={users} showLoader={showLoader}/>
 
                 {/* <!-- New user button  --> */}
                 <button className="btn-add btn" onClick={openCreateUserModal}>Add new user</button>
