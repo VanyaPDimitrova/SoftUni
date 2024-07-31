@@ -66,5 +66,21 @@
       "street": "456 Elm St",
       "streetNumber": "7"
     }
+  },
+  "305a6479-1b50-4b33-83ae-1e637d9aab49": {
+    "firstName": "Miroslav",
+    "lastName": "Stoyanov",
+    "email": "mirkata@abv.bg",
+    "phoneNumber": "0885121314",
+    "createdAt": "2024-07-31T17:33:59.470Z",
+    "updatedAt": "2024-07-31T17:33:59.470Z",
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
+    "_id": "305a6479-1b50-4b33-83ae-1e637d9aab49",
+    "address": {
+        "country": "Bulgaria",
+        "city": "Ruse",
+        "street": "Dunavska valna",
+        "streetNumber": "12"
+    }
   }
 }
