@@ -3,6 +3,7 @@ import Row from './Row';
 function Table({ 
     users,
     openUserDetailsModal,
+    openDeleteUserModal,
  }) {
     return (
         <table className="table">
@@ -66,6 +67,7 @@ function Table({
                         key={user._id} 
                         user={user}
                         openUserDetailsModal={openUserDetailsModal}
+                        openDeleteUserModal={openDeleteUserModal}
                     />
                     )
                 }   

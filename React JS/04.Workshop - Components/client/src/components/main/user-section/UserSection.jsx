@@ -8,6 +8,8 @@ const baseUrl = 'http://localhost:3030/jsonstore';
 function UserSection({  
     openCreateUserModal,
     openUserDetailsModal,
+    openDeleteUserModal,
+    deleteUserId,
 }) {
     const [users, setUsers] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
@@ -38,8 +40,6 @@ function UserSection({
     // }, []);
 
 
-
-
     return (
         <>
             <section className="card users-container">
@@ -50,6 +50,7 @@ function UserSection({
                     users={users} 
                     showLoader={showLoader}
                     openUserDetailsModal={openUserDetailsModal}
+                    openDeleteUserModal={openDeleteUserModal}
                 />
 
                 <button 

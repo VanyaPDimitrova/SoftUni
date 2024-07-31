@@ -5,6 +5,7 @@ function TableWrapper({
     users, 
     showLoader,
     openUserDetailsModal,
+    openDeleteUserModal,
  }) {
     return (
         <div className="table-wrapper">
@@ -12,7 +13,11 @@ function TableWrapper({
                 <Loading />
             }
 
-            <Table users={users} openUserDetailsModal={openUserDetailsModal} />
+            <Table 
+                users={users} 
+                openUserDetailsModal={openUserDetailsModal} 
+                openDeleteUserModal={openDeleteUserModal}
+            />
         </div>
     );
 }
