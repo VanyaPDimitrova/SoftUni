@@ -5,12 +5,20 @@ export const getAllUsers = () => {
         .then((res) => res.json());
 }
 
-export const createUser = () => {
-    return fetch(`${BASE_URL}/users`)
+export const createNewUser = (userData) => {
+    return fetch(`${BASE_URL}/users`, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+    }).then((res) => res.json());
 }
 
-export const deleteUser = (id) => {
-    return fetch(`${BASE_URL}/users/${id}`)
+export const deleteUserById = (id) => {
+    return fetch(`${BASE_URL}/users/${id}`, {
+        method: 'DELETE',
+    }).then(res => res.json());
 } 
 
 export const updateUser = (id) => {

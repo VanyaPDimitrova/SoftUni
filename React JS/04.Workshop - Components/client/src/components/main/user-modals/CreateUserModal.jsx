@@ -1,5 +1,6 @@
 function CreateUserModal({
     closeCreateUserModal,
+    createUser,
 }) {
     return (
         // Create/Edit Form component
@@ -22,7 +23,7 @@ function CreateUserModal({
                         </button>
                     </header>
 
-                    <form>
+                    <form onSubmit={createUser}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>

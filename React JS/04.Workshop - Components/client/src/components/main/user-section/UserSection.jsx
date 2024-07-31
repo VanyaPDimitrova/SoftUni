@@ -10,6 +10,7 @@ function UserSection({
     openUserDetailsModal,
     openDeleteUserModal,
     deleteUserId,
+    newUser,
 }) {
     const [users, setUsers] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
@@ -25,19 +26,25 @@ function UserSection({
             .catch(err => console.log(err));
     }, []);
 
-    // useEffect(() => {
-    //     (async function getUsers() {
-    //         try {
-    //             const response = await fetch(`${baseUrl}/users`);
-    //             const result = await response.json();
-    //             const data = Object.values(result);
+    /*
+        useEffect(() => {
+        (async function getUsers() {
+            try {
+                const response = await fetch(`${baseUrl}/users`);
+                const result = await response.json();
+                const data = Object.values(result);
     
-    //             setUsers(data);
-    //         } catch(err) {
-    //             console.log(err);
-    //         }
-    //     })();
-    // }, []);
+                setUsers(data);
+            } catch(err) {
+                console.log(err);
+            }
+        })();
+    }, []);
+    */
+
+    useEffect(() => {
+        setUsers(users => [...users, newUser]);
+    }, [newUser])
 
 
     return (

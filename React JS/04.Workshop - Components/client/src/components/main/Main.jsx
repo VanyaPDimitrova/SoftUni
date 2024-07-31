@@ -3,9 +3,11 @@ import UserSection from './user-section/UserSection';
 import CreateUserModal from './user-modals/CreateUserModal';
 import UserDetailsModal from './user-modals/UserDetailsModal';
 import DeleteUserModal from './user-modals/DeleteUserModal';
+import { createNewUser } from '../../services/users';
 
 function Main() {
     const [isCreateUserModalOpen, setIsCreateUserModalOpen] = useState(false);
+    const [newUser, setNewUser] = useState({});
     const [isUserDetailsModalOpen, setIsUserDetailsModalOpen] = useState(false);
     const [userDetails, setUserDetails] = useState({});
     const [isDeleteUserModalOpen, setIsDeleteUserModalOpen] = useState(false);
@@ -26,6 +28,24 @@ function Main() {
         setIsDeleteUserModalOpen(false);
     }
 
+    const createUser = async (e) => {
+        // prevent refresh
+        e.preventDefault();
+
+        // get user data
+        const formData = new FormData(e.currentTarget);
+        const userData = Object.fromEntries(formData);
+        const userDataWithDates = {...userData, createdAt: new Date(), updatedAt: new Date()};
+
+        const newUSer = await createNewUser(userDataWithDates);
+
+        // update local state
+        setNewUser(newUSer);
+
+        // close modal
+        setIsCreateUserModalOpen(false);
+    }
+
     return (
         <>
             <main className="main">
@@ -35,6 +55,7 @@ function Main() {
                     openUserDetailsModal={openUserDetailsModal}
                     openDeleteUserModal={openDeleteUserModal}
                     deleteUserId={deleteUserId}
+                    newUser={newUser}
                 />
 
 
@@ -46,7 +67,10 @@ function Main() {
                 }
 
                 {isCreateUserModalOpen && 
-                    <CreateUserModal closeCreateUserModal={() => setIsCreateUserModalOpen(false)} />
+                    <CreateUserModal 
+                        closeCreateUserModal={() => setIsCreateUserModalOpen(false)} 
+                        createUser={createUser}
+                    />
                 }
 
                 {isDeleteUserModalOpen &&
