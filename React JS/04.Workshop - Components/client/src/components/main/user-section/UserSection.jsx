@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import TablePagination from './TablePagination';
 import TableSearchBar from './TableSearchBar';
 import TableWrapper from './table/TableWrapper';
+import { getAllUsers } from '../../../services/users';
 
-const baseUrl = 'http://localhost:3030/jsonstore';
 
 function UserSection({  
     openCreateUserModal,
@@ -16,13 +16,13 @@ function UserSection({
 
     useEffect(() => {
         setShowLoader(true);
-        fetch(`${baseUrl}/users`)
-        .then(res => res.json())
-        .then(data => {
-            setUsers(Object.values(data));
-            setShowLoader(false);
-        })
-        .catch(err => console.log(err));
+
+        getAllUsers()
+            .then(data => {
+                setUsers(Object.values(data));
+                setShowLoader(false);
+            })
+            .catch(err => console.log(err));
     }, []);
 
     // useEffect(() => {
