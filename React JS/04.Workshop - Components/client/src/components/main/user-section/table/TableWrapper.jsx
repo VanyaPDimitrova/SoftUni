@@ -1,14 +1,18 @@
 import Loading from './Loading';
 import Table from './Table';
 
-function TableWrapper({ users, showLoader }) {
+function TableWrapper({ 
+    users, 
+    showLoader,
+    openUserDetailsModal,
+ }) {
     return (
         <div className="table-wrapper">
             {showLoader && 
                 <Loading />
             }
 
-            <Table users={users} />
+            <Table users={users} openUserDetailsModal={openUserDetailsModal} />
         </div>
     );
 }

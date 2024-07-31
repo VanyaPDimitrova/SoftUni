@@ -7,6 +7,7 @@ const baseUrl = 'http://localhost:3030/jsonstore';
 
 function UserSection({  
     openCreateUserModal,
+    openUserDetailsModal,
 }) {
     const [users, setUsers] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
@@ -45,10 +46,18 @@ function UserSection({
 
                 <TableSearchBar />
 
-                <TableWrapper users={users} showLoader={showLoader}/>
+                <TableWrapper 
+                    users={users} 
+                    showLoader={showLoader}
+                    openUserDetailsModal={openUserDetailsModal}
+                />
 
-                {/* <!-- New user button  --> */}
-                <button className="btn-add btn" onClick={openCreateUserModal}>Add new user</button>
+                <button 
+                    className="btn-add btn" 
+                    onClick={openCreateUserModal}
+                >
+                    Add new user
+                </button>
 
                 <TablePagination />
             </section>

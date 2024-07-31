@@ -1,7 +1,9 @@
 import { formatDate } from '../../../../utils/formatDate';
 
-function Row({ user }) {
-    // function Row({ image, firstName, lastName, email, phone, created }) {
+function Row({ 
+    user,
+    openUserDetailsModal,
+ }) {
     return (
         <tr>
             <td>
@@ -12,7 +14,6 @@ function Row({ user }) {
             <td>{user.email}</td>
             <td>{user.phoneNumber}</td>
             <td>{formatDate(user.createdAt)}</td>
-            {/* <td>June 28, 2022</td> */}
 
             <td className="actions">
                 <button className="btn edit-btn" title="Edit">
@@ -34,7 +35,7 @@ function Row({ user }) {
                     </svg>
                 </button>
 
-                <button className="btn info-btn" title="Info">
+                <button className="btn info-btn" title="Info" onClick={() => openUserDetailsModal(user)}>
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info"
                         className="svg-inline--fa fa-info" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="-150 0 512 612">

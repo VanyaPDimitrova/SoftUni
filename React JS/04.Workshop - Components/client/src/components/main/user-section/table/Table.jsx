@@ -1,6 +1,9 @@
 import Row from './Row';
 
-function Table({ users }) {
+function Table({ 
+    users,
+    openUserDetailsModal,
+ }) {
     return (
         <table className="table">
             <thead>
@@ -59,7 +62,11 @@ function Table({ users }) {
             </thead>
             <tbody>
                 {users.map(user => 
-                    <Row key={user._id} user={user} />
+                    <Row 
+                        key={user._id} 
+                        user={user}
+                        openUserDetailsModal={openUserDetailsModal}
+                    />
                     )
                 }   
             </tbody>
