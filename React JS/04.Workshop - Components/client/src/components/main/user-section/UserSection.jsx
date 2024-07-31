@@ -5,7 +5,9 @@ import TableWrapper from './table/TableWrapper';
 
 const baseUrl = 'http://localhost:3030/jsonstore';
 
-function UserSection() {
+function UserSection({  
+    openCreateUserModal,
+}) {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -30,6 +32,8 @@ function UserSection() {
     // }, []);
 
 
+
+
     return (
         <>
             <section className="card users-container">
@@ -39,7 +43,7 @@ function UserSection() {
                 <TableWrapper users={users} />
 
                 {/* <!-- New user button  --> */}
-                <button className="btn-add btn">Add new user</button>
+                <button className="btn-add btn" onClick={openCreateUserModal}>Add new user</button>
 
                 <TablePagination />
             </section>

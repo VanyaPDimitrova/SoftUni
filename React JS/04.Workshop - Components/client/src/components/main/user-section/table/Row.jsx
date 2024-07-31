@@ -5,8 +5,7 @@ function Row({ user }) {
     return (
         <tr>
             <td>
-                <img src={user.imageUrl}
-                alt="Peter's profile" className="image" />
+                <img src={user.imageUrl} alt={`${user.firstName}'s profile`} className="image" />
             </td>
             <td>{user.firstName}</td>
             <td>{user.lastName}</td>
