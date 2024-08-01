@@ -1,30 +1,29 @@
 import { useEffect, useState } from 'react';
 
 function ControlledForm() {
-    const [user, setUser] = useState({
-        _id: '',
-        username: '',
-        email: '',
-        age: '',
-    });
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     useEffect(() => {
         (async () => {
             const response = await fetch('http://localhost:3030/jsonstore/advanced/profiles/fb352199-bcbc-4e1d-a1dc-ed346a6fb49a');
-            const data = await response.json();
-            setUser(data);
+            const user = await response.json();
+            setUsername(user.username);
         }
         )();
     }, []);
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        console.log(user);
+        console.log('Form submit');
     };
 
-    const changeUserValuesHAndler = (e) => {
-        console.log(e.target.value);
-        setUser((user) => ({...user, [e.target.name]: e.target.value}));
+    const usernameChangeHandler = (e) => {
+        setUsername(e.target.value);
+    };
+
+    const passwordChangeHandler = (e) => {
+        setPassword(e.target.value);
     };
 
     return (
@@ -38,8 +37,8 @@ function ControlledForm() {
                         type="text" 
                         name='username' 
                         id='username'
-                        value={user.username}
-                        onChange={changeUserValuesHAndler}
+                        value={username}
+                        onChange={usernameChangeHandler}
                     />
                 </div>
 
@@ -49,6 +48,8 @@ function ControlledForm() {
                         type="password" 
                         name='password' 
                         id='password'
+                        value={password}
+                        onChange={passwordChangeHandler}
                     />
                 </div>
 
