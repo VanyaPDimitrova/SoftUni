@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function ControlledForm() {
     const [formValues, setFormValues] = useState({
@@ -10,6 +10,12 @@ function ControlledForm() {
         bio: '',
         occupation: 'qa'
     });
+
+    const inputRer = useRef();
+    useEffect(() => {
+        inputRer.current.focus();
+    }, []);
+
 
     useEffect(() => {
         (async () => {
@@ -38,6 +44,7 @@ function ControlledForm() {
                     <label htmlFor="username">Username </label>
                     <input 
                         type="text" 
+                        ref={inputRer}
                         name='username' 
                         id='username'
                         value={formValues.username}
@@ -97,7 +104,6 @@ function ControlledForm() {
                         value='f'
                         onChange={formValuesChangeHAndler}
                         checked={formValues.sex === 'f'}
-
                     />
                 </div>
 
