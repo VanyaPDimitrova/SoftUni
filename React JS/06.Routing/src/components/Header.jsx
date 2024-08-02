@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -39,13 +39,13 @@ function Header() {
 
                 <div className="hidden lg:flex lg:gap-x-12">
                     {navigation.map((item) => (
-                        <Link 
+                        <NavLink 
                             key={item.name} 
                             to={item.href} 
-                            className="text-sm font-semibold leading-6 text-gray-900"
+                            className={({ isActive }) => `text-sm font-semibold leading-6 text-gray-900${isActive ? ' underline' : ''}`}
                         >
                             {item.name}
-                        </Link>
+                        </NavLink>
                     ))}
                 </div>
 
