@@ -6,6 +6,7 @@ import Pricing from './components/Pricing';
 import Developers from './components/Developers';
 import Articles from './components/Articles';
 import ArticleContent from './components/ArticleContent';
+import NotFound from './components/NotFound';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
                 <Route path='/articles' element={<Articles />} />
                 <Route path='/articles/:articleId' element={<ArticleContent />} />
                 <Route path='/pricing' element={<Pricing />} />
+                <Route path='/not-found' element={<NotFound /> } />
+                <Route path='*' element={<NotFound /> } />
             </Routes>
             
         </div>

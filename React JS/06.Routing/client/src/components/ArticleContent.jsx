@@ -1,18 +1,37 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 
 function ArticleContent() {
     const [article, setArticle] = useState({});
     const params = useParams();
+    
+    const location = useLocation();
+    // console.log(location);
+
+    const navigate = useNavigate();
+    
 
     useEffect(() => {
         (async () => {
-            const result = await fetch(`http://localhost:3030/jsonstore/advanced/articles/details/${params.articleId}`);
-            const data = await result.json();
+            const response = await fetch(`http://localhost:3030/jsonstore/advanced/articles/details/${params.articleId}`);
+            if (response.statusText == 'No Content') {
+                // redirect
+                navigate('/not-found');
+                return;
+            }
+            
+            const data = await response.json();
             
             setArticle(data);
         })();
     }, []);
+
+    // redirect with Navigate component
+    /*
+    if (...) {
+        return <Navigate to="/not-found" />
+    };
+    */
 
     return (
         <div className="m-40 flex min-w-0 gap-x-4">
