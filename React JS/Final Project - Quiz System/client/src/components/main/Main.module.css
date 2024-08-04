@@ -1,0 +1,17 @@
+section {
+    padding: 0 80px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main h1 {
+    color: var(--blue);
+}

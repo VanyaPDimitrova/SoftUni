@@ -1,0 +1,36 @@
+nav {
+    max-width: 1480px;
+    margin: 0 auto;
+    /* padding: 0 40px; */
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 2em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em #2B6980aa);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    gap: 1.8em;
+}
+
+a {
+    font-weight: 500;
+    color: var(--grey);
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: var(--blue);
+}
