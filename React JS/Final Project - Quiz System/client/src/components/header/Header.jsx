@@ -11,9 +11,9 @@ const navigation = [
 function Header() {
     return (
         <header className={styles.header}>
-            <nav >
+            <nav>
                 <div className={styles.logo}>
-                    <Link to={navigation.Home}>
+                    <Link to="/">
                         <img src={QuizLogo} alt="quiz logo" className={styles.logo} />
                     </Link>
                 </div>
@@ -23,6 +23,7 @@ function Header() {
                         <NavLink 
                             key={item.name}
                             to={item.href}
+                            className={({ isActive }) => isActive ? styles.active : ''}
                         >
                             {item.name}
                         </NavLink>

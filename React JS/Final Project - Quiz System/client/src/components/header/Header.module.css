@@ -25,12 +25,17 @@ nav {
     gap: 1.8em;
 }
 
-a {
+.header a {
     font-weight: 500;
     color: var(--grey);
     text-decoration: inherit;
 }
 
-a:hover {
+.header a:hover {
+    color: var(--blue);
+}
+
+a.active {
+    text-decoration: underline;
     color: var(--blue);
 }

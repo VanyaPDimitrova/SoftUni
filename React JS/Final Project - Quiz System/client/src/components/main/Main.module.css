@@ -1,6 +1,6 @@
 section {
     padding: 0 80px;
-    min-height: 500px;
+    min-height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,6 +12,22 @@ section {
     gap: 30px;
 }
 
-.main h1 {
-    color: var(--blue);
+.container h1 {
+    color: var(--black);
+}
+
+.home {
+    background-color: var(--red);
+}
+
+.about {
+    background-color: var(--blue);
+}
+
+.contacts {
+    background-color: var(--green);
+}
+
+.logIn {
+    background-color: var(--yellow);
 }
