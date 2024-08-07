@@ -20,10 +20,6 @@ section {
     background-color: var(--red);
 }
 
-.about {
-    background-color: var(--blue);
-}
-
 .contacts {
     background-color: var(--green);
 }

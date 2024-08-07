@@ -1,4 +1,3 @@
-import About from './About';
 import Contacts from './Contacts';
 import Home from './Home';
 import LogIn from './LogIn';
@@ -10,7 +9,6 @@ function Main() {
         <main className={styles.main}>
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/About' element={<About />} />
                 <Route path='/Contacts' element={<Contacts />} />
                 <Route path='/LogIn' element={<LogIn />} />
             </Routes>

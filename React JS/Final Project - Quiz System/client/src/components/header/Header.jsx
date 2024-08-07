@@ -4,7 +4,6 @@ import QuizLogo from './QuizLogo.png';
 
 const navigation = [
     {name: 'Home' , href: '/'},
-    {name: 'About' , href: '/about'},
     {name: 'Contacts' , href: '/contacts'},
 ];
 
@@ -23,7 +22,7 @@ function Header() {
                         <NavLink 
                             key={item.name}
                             to={item.href}
-                            className={({ isActive }) => isActive ? styles.active : ''}
+                            className={({ isActive }) => isActive ? styles.active  : ''}
                         >
                             {item.name}
                         </NavLink>
