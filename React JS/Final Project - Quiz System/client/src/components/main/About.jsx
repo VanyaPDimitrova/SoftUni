@@ -1,13 +1,13 @@
 import styles from './Main.module.css';
-function Contacts() {
+function About() {
     return (
-        <section className={styles.contacts}> 
+        <section className={styles.about}> 
             <div className={styles.container}>
-                <h1>Hello from Contacts</h1>
+                <h1>Hello from About</h1>
 
             </div>
         </section>
     );
 }
 
-export default Contacts;
+export default About;

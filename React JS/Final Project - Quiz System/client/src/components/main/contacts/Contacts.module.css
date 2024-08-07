@@ -1,0 +1,41 @@
+.contacts {
+    background-color: var(--greenOpc);
+}
+
+.heading {
+    border-bottom: 3px solid var(--greenOpc); 
+    padding: 0 30px 20px ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5.5em;
+    gap: 2.8em;
+}
+
+.companyInfo {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.mediaLinks {
+    font-size: 1.5em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.mediaLinks i {
+    color: var(--black);
+}
+
+.companyMap {
+    height: 400px;
+    width: 100%;
+}
+

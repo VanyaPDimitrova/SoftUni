@@ -3,25 +3,18 @@ section {
     min-height: 900px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-}
-
-.container h1 {
-    color: var(--black);
+    justify-content: space-between;
+    margin-top: 5.5em;
+    gap: 80px;
 }
 
 .home {
-    background-color: var(--red);
-}
-
-.contacts {
-    background-color: var(--green);
+    background-color: var(--greenOpc);
 }
 
 .logIn {

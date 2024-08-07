@@ -1,4 +1,4 @@
-import Contacts from './Contacts';
+import Contacts from './contacts/Contacts';
 import Home from './Home';
 import LogIn from './LogIn';
 import styles from './Main.module.css';
