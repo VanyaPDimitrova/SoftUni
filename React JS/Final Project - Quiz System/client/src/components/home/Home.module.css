@@ -1,0 +1,23 @@
+.home {
+    background-image: url(./quiz.jpg);
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.8);
+    background-blend-mode: lighten;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5.5em;
+}
+
+.container h1 {
+    font-size: 4.2em;
+    margin: 1.2em 1.6em 0.5em;
+}
+
+.categories {
+    margin-left: 8em;
+}
+  
