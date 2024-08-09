@@ -18,6 +18,7 @@
 
 body {
   margin: 0 auto;
+  position: relative;
 }
 
 header {
@@ -83,7 +84,28 @@ h6 {
   font-weight: bold;
 }
 
+section {
+  padding: 0 80px;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+}
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5.5em;
+  gap: 80px;
+}
+
+.home {
+  background-color: var(--greenOpc);
+}
+
+.logIn {
+  background-color: var(--yellow);
+}
 
 /* button {
   border-radius: 8px;
