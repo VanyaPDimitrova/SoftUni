@@ -42,7 +42,7 @@ function Header() {
 
                     <div className={styles.login}>
                         <Link onClick={openModal} >
-                            Log in <span>&rarr;</span>
+                            Log in/Register
                         </Link>
                     </div>
                 </nav>
