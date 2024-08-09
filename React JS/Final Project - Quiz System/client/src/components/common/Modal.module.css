@@ -29,6 +29,14 @@
     margin-top: 50px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
 header.headers {
     display: flex;
     justify-content: space-between;

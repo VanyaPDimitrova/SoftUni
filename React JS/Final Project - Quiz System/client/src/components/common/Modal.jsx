@@ -1,11 +1,11 @@
 import styles from './Modal.module.css';
 
-function Modal({ close, container, header, content }) {
+function Modal({ close, header, content }) {
     return (
         <div className={styles.overlay}>
             <div className={styles.backdrop} onClick={close}>
                 <div className={styles.modal}>
-                    <div className={container}>
+                    <div className={styles.container}>
                         <header className={styles.headers}>
                             <h2>{header}</h2>
                     
