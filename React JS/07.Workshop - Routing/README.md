@@ -23,7 +23,8 @@ SoftUni React Course Project
 ### 3. Create Service Layer
 <ol>
  <li><input type="checkbox" checked> Service layer architecture discussion
- <li><input type="checkbox"> Abstract requester  
+ <li><input type="checkbox" checked> Abstract requester  
+ <li><input type="checkbox" checked> Add Games Api  
 </ol>
 
 ### 4. Page implementations

@@ -4,8 +4,8 @@ import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
-import Games from './components/games/Games';
-import GameCreate from './components/createGame/GameCreate';
+import Games from './components/game-list/GameList';
+import GameCreate from './components/game-create/GameCreate';
 
 function App() {
     return (
