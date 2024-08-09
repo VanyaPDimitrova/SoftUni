@@ -1,0 +1,57 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.modal {
+    max-width: 35rem;
+    position: relative;
+    max-height: 90vh;
+    margin: auto;
+    border-radius: 20px;
+    background-color: white;
+    padding: 1rem;
+    z-index: 30;
+    margin-top: 50px;
+}
+
+header.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 5px 0px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+}
+
+header.headers h2 {
+    margin: 0;
+    padding: 0px 12px;
+}
+
+.btnClose {
+    background-color: transparent;
+    padding: 0px 15px;
+    height: auto;
+    border: none;
+}
+
+.btnClose i {
+    font-size: 2em;
+    color: var(--black);
+}
