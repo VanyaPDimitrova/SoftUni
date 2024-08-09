@@ -14,7 +14,24 @@
 
 .container h1 {
     font-size: 4.2em;
-    margin: 0.3em 1.6em 0.5em;
+    margin: 0.5em 1.6em 0.5em;
+}
+
+.font {
+    font-family: 'Adobe Garamond Pro', serif;
+}
+
+.blue {
+    color: var(--blue);
+}
+.yellow {
+    color: var(--yellow);
+}
+.red {
+    color: var(--red);
+}
+.green {
+    color: var(--green);
 }
 
 .categories {

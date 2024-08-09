@@ -6,7 +6,22 @@ function Home() {
     return (
         <section className={styles.home}> 
             <div className={styles.container}>
-                <h1>Let's do QUIZ</h1>
+                <h1>Let's do <span className={styles.font}>
+                        <span className={styles.blue}>
+                            Q
+                        </span>
+                        <span className={styles.yellow}>
+                            U
+                        </span>
+                        <span className={styles.red}>
+                            I
+                        </span>
+                        <span className={styles.green}>
+                            Z
+                        </span>
+                        
+                    </span>  
+                </h1>
                 
                 <div className={styles.categories}>
                     <h2>All quiz topics</h2>   
