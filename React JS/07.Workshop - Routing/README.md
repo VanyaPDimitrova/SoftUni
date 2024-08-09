@@ -16,7 +16,8 @@ SoftUni React Course Project
 <ol>
  <li><input type="checkbox" checked> Install react-router-dom
  <li><input type="checkbox" checked> Set react-router-dom
- <li><input type="checkbox"> Add routes in App.js
- <li><input type="checkbox"> Add links in the navigation
+ <li><input type="checkbox" checked> Add routes in App.js
+ <li><input type="checkbox" checked> Add links in the navigation
+ <li><input type="checkbox"> 
 
 </ol>
