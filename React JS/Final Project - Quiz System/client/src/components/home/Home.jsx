@@ -1,4 +1,6 @@
+import AllCategories from '../quizCategories/AllCategories';
 import styles from './Home.module.css';
+
 function Home() {
 
     return (
@@ -7,8 +9,8 @@ function Home() {
                 <h1>Let's do QUIZ</h1>
                 
                 <div className={styles.categories}>
-                    <h2>All quiz topics</h2>    
-                    
+                    <h2>All quiz topics</h2>   
+                    <AllCategories />
                 </div>
             </div>
         </section>
