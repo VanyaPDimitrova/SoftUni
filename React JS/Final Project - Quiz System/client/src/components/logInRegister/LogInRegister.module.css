@@ -1,0 +1,19 @@
+/* .logInRegister {
+
+}
+
+.register {
+
+}
+
+.logIn {
+
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5.5em;
+    gap: 80px;
+  }

@@ -14,7 +14,8 @@
 
 .container h1 {
     font-size: 4.2em;
-    margin: 0.5em 1.6em 0.5em;
+    align-self: center;
+    margin: 0.6em 1.6em 0.5em 0;
 }
 
 .font {
