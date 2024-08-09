@@ -4,7 +4,7 @@ function Modal({ close, header, content }) {
     return (
         <div className={styles.overlay}>
             <div className={styles.backdrop} onClick={close}>
-                <div className={styles.modal}>
+                <div className={styles.modal} onClick={e => e.stopPropagation()} >
                     <div className={styles.container}>
                         <header className={styles.headers}>
                             <h2>{header}</h2>
