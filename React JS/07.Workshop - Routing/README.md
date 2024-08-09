@@ -18,6 +18,22 @@ SoftUni React Course Project
  <li><input type="checkbox" checked> Set react-router-dom
  <li><input type="checkbox" checked> Add routes in App.js
  <li><input type="checkbox" checked> Add links in the navigation
- <li><input type="checkbox"> 
+</ol>
 
+### 3. Create Service Layer
+<ol>
+ <li><input type="checkbox" checked> Service layer architecture discussion
+ <li><input type="checkbox"> Abstract requester  
+</ol>
+
+### 4. Page implementations
+<ol>
+ <li><input type="checkbox"> Game list
+ <li><input type="checkbox">  
+</ol>
+
+### 5. 
+<ol>
+ <li><input type="checkbox"> 
+ <li><input type="checkbox">  
 </ol>
