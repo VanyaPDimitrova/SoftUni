@@ -1,42 +1,56 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+
 import styles from './Header.module.css';
+
 import QuizLogo from './QuizLogo.png';
+import LogInRegisterModal from '../logInRegister/LogInRegisterModal';
 
 const navigation = [
     {name: 'Home' , href: '/'},
     {name: 'Contacts' , href: '/contacts'},
 ];
 
+
 function Header() {
+    const [isOpenLogInRegisterModal, setIsOpenLogInRegisterModal] = useState(false);
+    const openModal = () => setIsOpenLogInRegisterModal(true);
+    const closeModal = () => setIsOpenLogInRegisterModal(false);
+
     return (
-        <header className={styles.header}>
-            <nav>
-                <div className={styles.logo}>
-                    <Link to="/">
-                        <img src={QuizLogo} alt="quiz logo" className={styles.logo} />
-                    </Link>
-                </div>
+        <>
+            <header className={styles.header}>
+                <nav>
+                    <div className={styles.logo}>
+                        <Link to="/">
+                            <img src={QuizLogo} alt="quiz logo" className={styles.logo} />
+                        </Link>
+                    </div>
 
-                <div className={styles.navigation}>
-                    {navigation.map((item) => (
-                        <NavLink 
-                            key={item.name}
-                            to={item.href}
-                            className={({ isActive }) => isActive ? styles.active  : ''}
-                        >
-                            {item.name}
-                        </NavLink>
-                    ))}
-                </div>
+                    <div className={styles.navigation}>
+                        {navigation.map((item) => (
+                            <NavLink 
+                                key={item.name}
+                                to={item.href}
+                                className={({ isActive }) => isActive ? styles.active  : ''}
+                            >
+                                {item.name}
+                            </NavLink>
+                        ))}
+                    </div>
 
 
-                <div className={styles.login}>
-                    <Link to="/login" >
-                        Log in <span>&rarr;</span>
-                    </Link>
-                </div>
-            </nav>
-        </header>
+                    <div className={styles.login}>
+                        <Link onClick={openModal} >
+                            Log in <span>&rarr;</span>
+                        </Link>
+                    </div>
+                </nav>
+            </header>
+            {isOpenLogInRegisterModal && 
+                <LogInRegisterModal close={closeModal} />
+            }
+        </>
     );
 }
 
