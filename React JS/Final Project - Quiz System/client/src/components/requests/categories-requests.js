@@ -1,4 +1,4 @@
-import MAIN_URL from '../common/MainUrl';
+import MAIN_URL from '../../common/MainUrl';
 
 export const getAllCategories = () => {
   return fetch(`${MAIN_URL}/categories`)

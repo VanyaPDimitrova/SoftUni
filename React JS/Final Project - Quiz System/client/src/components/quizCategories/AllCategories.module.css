@@ -1,0 +1,7 @@
+.allCategories {
+    min-height: 10em;
+}
+
+.allCategories li {
+    color: var(--blue);
+}
