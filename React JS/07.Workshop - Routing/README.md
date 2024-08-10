@@ -25,12 +25,14 @@ SoftUni React Course Project
  <li><input type="checkbox" checked> Service layer architecture discussion
  <li><input type="checkbox" checked> Abstract requester  
  <li><input type="checkbox" checked> Add Games Api  
+ <li><input type="checkbox" checked> Pre seed practice server
 </ol>
 
 ### 4. Page implementations
 <ol>
- <li><input type="checkbox"> Game list
- <li><input type="checkbox">  
+ <li><input type="checkbox" checked> Game list
+ <li><input type="checkbox"> Details
+ <li><input type="checkbox"> Home
 </ol>
 
 ### 5. 
