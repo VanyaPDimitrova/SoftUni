@@ -9,3 +9,9 @@ export const getAll = async () => {
     
     return data;
 };
+
+export const getOne = (gameId) => {
+    const result = request.get(`${GAMES_URL}/${gameId}`);
+    
+    return result;
+};

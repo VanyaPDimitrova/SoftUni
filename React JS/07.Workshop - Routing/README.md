@@ -30,8 +30,14 @@ SoftUni React Course Project
 
 ### 4. Page implementations
 <ol>
- <li><input type="checkbox" checked> Game list
+ <li><input type="checkbox" checked> Game list with conditional rendering
  <li><input type="checkbox"> Details
+    <ol>
+        <input type="checkbox" checked> Details link
+        <input type="checkbox" checked> Details route
+        <input type="checkbox"> Api function - getOne
+        <input type="checkbox"> Details component
+    </ol>
  <li><input type="checkbox"> Home
 </ol>
 
