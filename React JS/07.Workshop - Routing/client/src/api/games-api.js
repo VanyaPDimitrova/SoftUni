@@ -6,6 +6,6 @@ export const getAll = async () => {
     const result = await request.get(GAMES_URL);
 
     const data = Object.values(result);
-
+    
     return data;
 };
