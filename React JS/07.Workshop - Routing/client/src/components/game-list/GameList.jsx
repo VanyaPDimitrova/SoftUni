@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import * as gamesAPI from '../../api/games-api';
+import gamesApi from '../../api/games-api';
 
 import GameListItem from './game-list-item/GameListItem';
 
@@ -8,7 +8,7 @@ function GameList() {
     const [games, setGames] = useState([]); 
 
     useEffect(() => {
-        gamesAPI.getAll()
+        gamesApi.getAll()
             .then(result => setGames(result));
     }, []);
     

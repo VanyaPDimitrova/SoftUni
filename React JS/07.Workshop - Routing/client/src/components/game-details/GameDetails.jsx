@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getOne } from '../../api/games-api';
+
+import gamesApi from '../../api/games-api';
+
 
 function GameDetails() {
     const [game, setGame] = useState({
@@ -14,7 +16,7 @@ function GameDetails() {
     const { gameId } = useParams();
     
     useEffect(() => {
-        getOne(gameId)
+        gamesApi.getOne(gameId)
         .then(data => setGame(data));
     }, []);
 
@@ -36,6 +38,8 @@ function GameDetails() {
                 <p className="text">
                     {summary}
                 </p>
+
+
 
                 {/* // Bonus ( for Guests and Users ) */}
                 <div className="details-comments">
