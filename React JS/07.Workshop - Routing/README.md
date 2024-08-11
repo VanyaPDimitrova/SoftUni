@@ -35,10 +35,10 @@ SoftUni React Course Project
     <ol>
         <input type="checkbox" checked> Details link
         <input type="checkbox" checked> Details route
-        <input type="checkbox"> Api function - getOne
-        <input type="checkbox"> Details component
+        <input type="checkbox" checked> Api function - getOne
+        <input type="checkbox" checked> Details component
     </ol>
- <li><input type="checkbox"> Home
+ <li><input type="checkbox" checked> Home - Latest Games
 </ol>
 
 ### 5. 
