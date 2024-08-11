@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import gamesApi from '../../api/games-api';
+import commentsApi from '../../api/comments-api';
 
 
 function GameDetails() {
@@ -12,7 +13,10 @@ function GameDetails() {
         summary: '',
         title: '',
         _id: '',
-     });
+        comments: {},
+    });
+    const [username, setUsername] = useState('');
+    const [comment, setComment] = useState('');
     const { gameId } = useParams();
     
     useEffect(() => {
@@ -20,7 +24,26 @@ function GameDetails() {
         .then(data => setGame(data));
     }, []);
 
-    const { category, imageUrl, maxLevel, summary, title, _id } = game;
+    
+    let { category, imageUrl, maxLevel, summary, title, _id, comments} = game;
+    
+
+    const commentSubmitHandler = async (e) => {
+        e.preventDefault();
+
+        const newComment = await commentsApi.create(gameId, username, comment); 
+        const newGame = {... game,
+                            comments: {
+                                ... comments,
+                                [newComment._id]: newComment,
+                            }
+                        }
+        
+        setGame(newGame);
+        setUsername('');
+        setComment('');
+    };
+    
 
     return (
         // Details Page
@@ -40,36 +63,50 @@ function GameDetails() {
                 </p>
 
 
-
                 {/* // Bonus ( for Guests and Users ) */}
                 <div className="details-comments">
                     <h2>Comments:</h2>
-                    <ul>
-                    {/* list all comments for current game (If any) */}
-                        <li className="comment">
-                            <p>Content: I rate this one quite highly.</p>
-                        </li>
-                        <li className="comment">
-                            <p>Content: The best game.</p>
-                        </li>
-                    </ul>
-                    {/* Display paragraph: If there are no games in the database */}
-                    <p className="no-comment">No comments.</p>
+
+                    {Object.values(comments || {}).length > 0
+                        ? <ul>
+                            { Object.values(comments).map(comment => (
+                                <li key={comment._id} className="comment">
+                                    <p>{`${comment.username}: ${comment.text}`}</p>
+                                </li>))
+                            }
+                          </ul>
+                        : <p className="no-comment">No comments.</p>
+                    }
+                                    
                 </div>
 
                 {/* Edit/Delete buttons ( Only for creator of this game )  */}
-                <div className="buttons">
+                {/* <div className="buttons">
                     <a href="#" className="button">Edit</a>
                     <a href="#" className="button">Delete</a>
-                </div>
+                </div> */}
             </div>
 
             {/* Bonus */}
             {/* Add Comment ( Only for logged-in users, which is not creators of the current game ) */}
             <article className="create-comment">
                 <label>Add new comment:</label>
-                <form className="form">
-                    <textarea className="comment" placeholder="Comment......"></textarea>
+                <form className="form" onSubmit={commentSubmitHandler}>
+                    <input 
+                        type='text' 
+                        placeholder='Pesho' 
+                        name='username' 
+                        onChange={(e) => setUsername(e.target.value)}
+                        value={username}
+                    />
+
+                    <textarea 
+                        className="comment" 
+                        placeholder="Comment......"
+                        onChange={(e) => setComment(e.target.value)}
+                        value={comment}
+                    ></textarea>
+
                     <input className="btn submit" type="submit" value="Add Comment" />
                 </form>
             </article>

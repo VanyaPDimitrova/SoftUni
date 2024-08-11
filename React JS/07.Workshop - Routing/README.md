@@ -41,8 +41,12 @@ SoftUni React Course Project
  <li><input type="checkbox" checked> Home - Latest Games
 </ol>
 
-### 5. 
+### 5. Comments (Advanced)
 <ol>
- <li><input type="checkbox"> 
- <li><input type="checkbox">  
+ <li><input type="checkbox" checked> Create service fore nested resource 'comments' 
+ <li><input type="checkbox" checked> Post comment to sever
+ <li><input type="checkbox"> Read comments from server
+ <li><input type="checkbox"> Add comment in the component
+ <li><input type="checkbox"> Clear form
+ <li><input type="checkbox"> Conditional rendering
 </ol>
