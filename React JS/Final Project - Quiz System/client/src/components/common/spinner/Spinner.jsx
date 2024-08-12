@@ -2,10 +2,10 @@ import styles from './Spinner.module.css';
 
 function Spinner() {
     return (
-        <div className={styles.loadingShade}>
-            <div className={styles.spinner}></div>
-        </div>
+        <span class={styles.spinner}></span>
     );
 }
 
 export default Spinner;
+
+// https://cssloaders.github.io/
