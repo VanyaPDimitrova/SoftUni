@@ -1,20 +1,16 @@
-// import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+
 import useModalState from '../common/modal/useModalState';
+import useNavigation from './useNavigation';
 
-import styles from './Header.module.css';
-
-import QuizLogo from './QuizLogo.png';
 import LogInRegisterModal from '../logInRegister/LogInRegisterModal';
 
-const navigation = [
-    {name: 'Home' , href: '/'},
-    {name: 'Contacts' , href: '/contacts'},
-];
+import QuizLogo from './QuizLogo.png';
+import styles from './Header.module.css';
 
-
-function Header() {
+function Header({ user }) {
     const { isModalOpen, openModal, closeModal } = useModalState();
+    const nav = useNavigation(user);
     
     return (
         <>
@@ -27,7 +23,7 @@ function Header() {
                     </div>
 
                     <div className={styles.navigation}>
-                        {navigation.map((item) => (
+                        {nav.map((item) => (
                             <NavLink 
                                 key={item.name}
                                 to={item.href}
@@ -46,9 +42,8 @@ function Header() {
                     </div>
                 </nav>
             </header>
-            {isModalOpen && 
-                <LogInRegisterModal close={closeModal} />
-            }
+
+            <LogInRegisterModal open={isModalOpen} close={closeModal} />
         </>
     );
 }

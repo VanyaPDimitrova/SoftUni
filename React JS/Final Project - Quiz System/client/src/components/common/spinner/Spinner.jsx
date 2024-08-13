@@ -2,7 +2,7 @@ import styles from './Spinner.module.css';
 
 function Spinner() {
     return (
-        <span class={styles.spinner}></span>
+        <span className={styles.spinner}></span>
     );
 }
 
