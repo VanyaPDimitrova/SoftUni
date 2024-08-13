@@ -1,5 +1,6 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useModalState from '../common/modal/useModalState';
 
 import styles from './Header.module.css';
 
@@ -13,10 +14,8 @@ const navigation = [
 
 
 function Header() {
-    const [isOpenLogInRegisterModal, setIsOpenLogInRegisterModal] = useState(false);
-    const openModal = () => setIsOpenLogInRegisterModal(true);
-    const closeModal = () => setIsOpenLogInRegisterModal(false);
-
+    const { isModalOpen, openModal, closeModal } = useModalState();
+    
     return (
         <>
             <header className={styles.header}>
@@ -47,7 +46,7 @@ function Header() {
                     </div>
                 </nav>
             </header>
-            {isOpenLogInRegisterModal && 
+            {isModalOpen && 
                 <LogInRegisterModal close={closeModal} />
             }
         </>
