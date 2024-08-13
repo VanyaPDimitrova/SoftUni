@@ -1,8 +1,20 @@
 .home {
-    background-image: url(./quiz.jpg);
     background-size: 100% 100%;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.9);
     background-blend-mode: lighten;
+}
+
+.public {
+    background-image: url(./public.jpg);
+    background-color: rgba(255,255,255,0.8);
+}
+
+.student {
+    background-image: url(./student.jpg);
+}
+
+.teacher {
+    background-image: url(./teacher.jpg);
 }
 
 .container {
