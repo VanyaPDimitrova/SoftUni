@@ -6,10 +6,13 @@ import { AuthContext } from '../../context/AuthContext';
 import styles from './LogInRegister.module.css';
 
 function LogIn({ closeModal }) {
-    const [values, setValues] = useState({ 
-                                    email: '', 
-                                    password: '' 
-                                });
+    const initialValue = { 
+        email: '', 
+        password: '', 
+    };
+    const [values, setValues] = useState(initialValue);
+
+    const [error, setError] = useState('');
 
     const { changeAuthState } = useContext(AuthContext);                            
     
@@ -32,7 +35,7 @@ function LogIn({ closeModal }) {
                 changeAuthState(data);
                 closeModal();
             })
-            .catch(err => console.error(err));
+            .catch(err => setError(err.message));
     };
     
 
@@ -64,6 +67,12 @@ function LogIn({ closeModal }) {
                         />
                     </div>
                 </div>
+
+                {error && 
+                    <div className={styles.error}>
+                        <p>{error}</p>
+                    </div>
+                }
 
                 <div className={styles.buttons}>
                     <button type="submit" className={styles.submitBtn}>Login</button>

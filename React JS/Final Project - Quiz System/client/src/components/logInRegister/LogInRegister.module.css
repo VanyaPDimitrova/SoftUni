@@ -63,3 +63,7 @@ button:hover {
 .submitBtn {
     color: var(--green);
 }
+
+.error {
+    color: var(--red);
+}
