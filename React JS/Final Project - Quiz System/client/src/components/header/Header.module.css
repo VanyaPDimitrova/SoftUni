@@ -1,4 +1,4 @@
-nav {
+.header nav {
     max-width: 1480px;
     margin: 0 auto;
     height: 72px;
@@ -7,12 +7,10 @@ nav {
     align-items: center;
 }
 
-.logo {
-    height: 2em;
-    will-change: filter;
-    transition: filter 300ms;
+img.logo {
+    width: 120px;
 }
-.logo:hover {
+img.logo:hover {
     filter: drop-shadow(0 0 2em #2B6980aa);
 }
 

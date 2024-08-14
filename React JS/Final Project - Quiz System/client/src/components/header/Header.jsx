@@ -10,20 +10,24 @@ import styles from './Header.module.css';
 
 function Header({ user }) {
     const { isModalOpen, openModal, closeModal } = useModalState();
-    const nav = useNavigation(user);
+    const navigation = useNavigation(user);
+
+    const logoutUser = () => {
+        // TODO: ...
+    };
     
     return (
         <>
             <header className={styles.header}>
                 <nav>
-                    <div className={styles.logo}>
+                    <div>
                         <Link to="/">
                             <img src={QuizLogo} alt="quiz logo" className={styles.logo} />
                         </Link>
                     </div>
 
                     <div className={styles.navigation}>
-                        {nav.map((item) => (
+                        {navigation.map((item) => (
                             <NavLink 
                                 key={item.name}
                                 to={item.href}
@@ -36,14 +40,20 @@ function Header({ user }) {
 
 
                     <div className={styles.login}>
-                        <Link onClick={openModal} >
-                            Log in/Register
-                        </Link>
+                        {!user
+                            ? <Link onClick={openModal} >
+                                Log in/Register
+                            </Link>
+                            : <Link onClick={logoutUser} >
+                                Log Out
+                            </Link>
+                        }
                     </div>
                 </nav>
             </header>
-
-            <LogInRegisterModal open={isModalOpen} close={closeModal} />
+            {isModalOpen &&
+                <LogInRegisterModal close={closeModal} />
+            }
         </>
     );
 }
