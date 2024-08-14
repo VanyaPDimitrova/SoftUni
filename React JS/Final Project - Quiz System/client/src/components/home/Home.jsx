@@ -1,16 +1,23 @@
+import { useContext } from 'react';
+
+import { AuthContext } from '../../context/AuthContext';
+import { isStudent, isTeacher } from '../../common/constants';
+
 import HomePublic from './HomePublic';
 import HomeStudent from './HomeStudent';
 import HomeTeacher from './HomeTeacher';
 
-function Home({ user }) {
-    if (!user) {
+function Home() {
+    const { isAuthenticated, role } = useContext(AuthContext);
+
+    if (!isAuthenticated || !role) {
         return <HomePublic />;
     } else {
-        if (isStudent(user)) {
+        if (isStudent(role)) {
             return <HomeStudent />;
         } 
         
-        if (isTeacher(statusbar)) {
+        if (isTeacher(role)) {
             return <HomeTeacher />;
         }
     }

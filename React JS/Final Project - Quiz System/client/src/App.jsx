@@ -41,3 +41,6 @@ function App() {
 }
 
 export default App;
+
+// email: student@abv.bg  password: 123456
+// email: teacher@abv.bg  password: 123456

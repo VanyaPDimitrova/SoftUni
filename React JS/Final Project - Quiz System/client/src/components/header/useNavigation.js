@@ -1,6 +1,10 @@
-import { isStudent, isTeacher } from '../../common/constants';
+import { useContext } from 'react';
 
-function useNavigation(user) {
+import { isStudent, isTeacher } from '../../common/constants';
+import { AuthContext } from '../../context/AuthContext';
+
+function useNavigation() {
+    const { isAuthenticated, role } = useContext(AuthContext);
     const nav = {
         public: [
             {name: 'Home' , href: '/'},
@@ -21,14 +25,14 @@ function useNavigation(user) {
         ]
     };
 
-    if (!user) {
+    if (!isAuthenticated || !role) {
         return nav.public;
     } else {
-        if (isStudent(user)) {
+        if (isStudent(role)) {
             return nav.student;
         } 
         
-        if (isTeacher(statusbar)) {
+        if (isTeacher(role)) {
             return nav.teacher;
         }
     }

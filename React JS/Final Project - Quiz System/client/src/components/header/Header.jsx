@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import useModalState from '../common/modal/useModalState';
@@ -7,13 +8,15 @@ import LogInRegisterModal from '../logInRegister/LogInRegisterModal';
 
 import QuizLogo from './QuizLogo.png';
 import styles from './Header.module.css';
+import { AuthContext } from '../../context/AuthContext';
 
-function Header({ user }) {
+function Header() {
     const { isModalOpen, openModal, closeModal } = useModalState();
-    const navigation = useNavigation(user);
+    const { isAuthenticated, changeAuthState } = useContext(AuthContext);
+    const navigation = useNavigation();
 
     const logoutUser = () => {
-        // TODO: ...
+        changeAuthState({});
     };
     
     return (
@@ -40,7 +43,7 @@ function Header({ user }) {
 
 
                     <div className={styles.login}>
-                        {!user
+                        {!isAuthenticated
                             ? <Link onClick={openModal} >
                                 Log in/Register
                             </Link>
