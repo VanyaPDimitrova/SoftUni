@@ -1,13 +1,17 @@
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+
 import { login } from '../requests/auth-requester';
+import { AuthContext } from '../../context/AuthContext';
+
 import styles from './LogInRegister.module.css';
-import { useState } from 'react';
 
 function LogIn({ closeModal }) {
     const [values, setValues] = useState({ 
                                     email: '', 
                                     password: '' 
                                 });
+
+    const { changeAuthState } = useContext(AuthContext);                            
     
     const changeHandler = (e) => {
         setValues(state => ({
@@ -21,7 +25,7 @@ function LogIn({ closeModal }) {
 
         login(values)
             .then(data => {
-                console.log(data);
+                changeAuthState(data);
                 closeModal();
             })
             .catch(err => console.log(err.message));
