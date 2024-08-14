@@ -27,10 +27,14 @@ function Register({ closeModal }) {
 
         register(values)
             .then(data => {
+                if (!data.email) {
+                    throw new Error(data.message);
+                }  
+                
                 changeAuthState(data);
                 closeModal();
             })
-            .catch(err => console.log(err.message));
+            .catch(err => console.error(err));
     };
 
     
