@@ -2,12 +2,14 @@ import LogIn from './LogIn';
 import Register from './Register';
 import styles from './LogInRegister.module.css';
 
-function LogInRegister() {
+function LogInRegister({ isLogIn }) {
     return (
-        <section className={styles.logIn}>
-            <LogIn />
-            <Register />
-        </section>
+        <>
+            {isLogIn
+                ? <LogIn />
+                : <Register />
+            }
+        </>
     );
 }
 

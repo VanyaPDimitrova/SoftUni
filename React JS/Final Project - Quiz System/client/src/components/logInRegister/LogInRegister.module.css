@@ -1,19 +1,61 @@
-/* .logInRegister {
-
-}
-
-.register {
-
-}
-
-.logIn {
-
-} */
-
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 5.5em;
-    gap: 80px;
-  }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8em;
+    padding-left: 5px;
+}
+
+button {
+    color: var(--black);
+    font-size: 1.5em;
+    line-height: 1.1;
+    font-weight: bold;
+    background-color: #fff;
+    border: none;
+}
+
+.header .focusClass {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+button:hover {
+    color: var(--blue);
+}
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 300px;
+    min-width: 400px;
+}
+
+.login .data {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: var(--black);
+    font-weight: bold;
+    gap: 15px;
+    font-size: 1.2em;
+    margin-top: 50px;
+}
+
+.login .buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 15px;
+}

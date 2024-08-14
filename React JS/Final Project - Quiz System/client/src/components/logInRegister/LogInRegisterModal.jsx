@@ -1,15 +1,37 @@
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import Modal from '../common/modal/Modal';
 import LogInRegister from './LogInRegister';
 
-function LogInRegisterModal({ open, close }) {
-    const modalHeader = 'Log in/Register';
+import styles from './LogInRegister.module.css';
+
+function LogInRegisterModal({ close }) {
+    const [isLogIn, setIsLogIn] = useState(true); 
+
+    const modalHeader = (
+        <div className={styles.header}>
+            <button 
+                className={isLogIn && styles.focusClass}
+                onClick={() => setIsLogIn(true)}
+            >
+                Log in
+            </button>
+
+            <button 
+                className={!isLogIn && styles.focusClass}
+                onClick={() => setIsLogIn(false)} 
+            >
+                Register
+            </button>
+        </div>
+    );
 
     return (
         <Modal
-            open={open}
             close={close} 
             header={modalHeader}
-            content={<LogInRegister />}
+            content={<LogInRegister isLogIn={isLogIn} />}
         />
     );
 }
