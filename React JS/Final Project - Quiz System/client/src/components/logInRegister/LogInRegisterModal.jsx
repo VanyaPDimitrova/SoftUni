@@ -12,14 +12,14 @@ function LogInRegisterModal({ close }) {
     const modalHeader = (
         <div className={styles.header}>
             <button 
-                className={isLogIn && styles.focusClass}
+                className={isLogIn ? styles.focusClass : undefined}
                 onClick={() => setIsLogIn(true)}
             >
                 Log in
             </button>
 
             <button 
-                className={!isLogIn && styles.focusClass}
+                className={isLogIn ? undefined : styles.focusClass}
                 onClick={() => setIsLogIn(false)} 
             >
                 Register
@@ -31,7 +31,7 @@ function LogInRegisterModal({ close }) {
         <Modal
             close={close} 
             header={modalHeader}
-            content={<LogInRegister isLogIn={isLogIn} />}
+            content={<LogInRegister closeModal={close} isLogIn={isLogIn} />}
         />
     );
 }

@@ -1,7 +1,7 @@
 import { STUDENT_ROLE, TEACHER_ROLE } from '../../common/constants';
 import styles from './LogInRegister.module.css';
 
-function Register() {
+function Register({ closeModal }) {
     return (
         <div className={styles.container}>
             <form className={styles.login}>
@@ -40,8 +40,8 @@ function Register() {
                 </div>
 
                 <div className={styles.buttons}>
-                    <button type="submit" className='submitBtn'>Register</button>
-                    <button className='cancelBtn'>Cancel</button>
+                    <button type="submit" className={styles.submitBtn}>Register</button>
+                    <button className='cancelBtn' onClick={closeModal}>Cancel</button>
                 </div>
             </form>
         </div>

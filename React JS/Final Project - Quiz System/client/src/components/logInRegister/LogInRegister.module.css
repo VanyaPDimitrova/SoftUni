@@ -59,3 +59,7 @@ button:hover {
     margin-bottom: 10px;
     gap: 15px;
 }
+
+.submitBtn {
+    color: var(--green);
+}

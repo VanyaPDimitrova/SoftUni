@@ -2,12 +2,12 @@ import LogIn from './LogIn';
 import Register from './Register';
 import styles from './LogInRegister.module.css';
 
-function LogInRegister({ isLogIn }) {
+function LogInRegister({ closeModal, isLogIn }) {
     return (
         <>
             {isLogIn
-                ? <LogIn />
-                : <Register />
+                ? <LogIn closeModal={closeModal} />
+                : <Register closeModal={closeModal} />
             }
         </>
     );
