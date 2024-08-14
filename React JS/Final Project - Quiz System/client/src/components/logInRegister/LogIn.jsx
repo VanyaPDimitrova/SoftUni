@@ -30,7 +30,7 @@ function LogIn({ closeModal }) {
             })
             .catch(err => console.log(err.message));
     };
-
+    
 
     return ( 
         <div className={styles.container}>

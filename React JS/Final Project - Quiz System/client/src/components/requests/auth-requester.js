@@ -9,4 +9,15 @@ export const login = ({ email, password }) => {
       body: JSON.stringify({ email, password })
     })
       .then((res) => res.json());
+};
+
+  export const register = ({ email, password, role }) => {
+    return fetch(`${AUTH_URL}/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password, role })
+    })
+      .then((res) => res.json());
   };

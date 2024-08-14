@@ -16,11 +16,15 @@ function App() {
     }
 
     const contextData = {
+        createdOn: authState._createdOn,
+        id: authState._id,
+        role: authState.role,
         email: authState.email,
         accessToken: authState.accessToken,
         isAuthenticated: !!authState.email,
         changeAuthState,
     };
+    
 
     return (
         <AuthContext.Provider value={contextData}>

@@ -1,17 +1,51 @@
+import { useContext, useState } from 'react';
+
 import { STUDENT_ROLE, TEACHER_ROLE } from '../../common/constants';
+import { register } from '../requests/auth-requester';
+import { AuthContext } from '../../context/AuthContext';
+
 import styles from './LogInRegister.module.css';
 
 function Register({ closeModal }) {
+    const [values, setValues] = useState({ 
+                                    email: '', 
+                                    password: '',
+                                    role: STUDENT_ROLE, 
+                                });
+
+    const { changeAuthState } = useContext(AuthContext);                            
+    
+    const changeHandler = (e) => {
+        setValues(state => ({
+            ...state,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        register(values)
+            .then(data => {
+                changeAuthState(data);
+                closeModal();
+            })
+            .catch(err => console.log(err.message));
+    };
+
+    
     return (
         <div className={styles.container}>
-            <form className={styles.login}>
+            <form className={styles.login} onSubmit={submitHandler}>
                 <div className={styles.data}>
                     <div className="field">
                         <label htmlFor="email">Email: </label>
                         <input 
                             type="email" 
                             id='email' 
-                            name='email' 
+                            name='email'
+                            value={values.email}
+                            onChange={changeHandler}
                             placeholder='pesho@abv.bg'
                         />
                     </div>
@@ -22,15 +56,19 @@ function Register({ closeModal }) {
                             type="password"
                             id='password' 
                             name='password' 
+                            value={values.password}
+                            onChange={changeHandler}
                         />
                     </div>
 
                     <div className="field">
-                        <label htmlFor="password">Role: </label>
+                        <label htmlFor="role">Role: </label>
                         <select 
-                            type="password"
-                            id='password' 
-                            name='password' 
+                            type="role"
+                            id='role' 
+                            name='role' 
+                            value={values.role}
+                            onChange={changeHandler}
                             placeholder='student/teacher'
                         >
                               <option value={STUDENT_ROLE}>Student</option>
