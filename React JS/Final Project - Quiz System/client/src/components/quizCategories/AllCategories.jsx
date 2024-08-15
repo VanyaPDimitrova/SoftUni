@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { getAllCategories } from '../../requests/categories-requests';
+import { getAllCategoriesPublic } from '../../requests/categories-requests';
 import styles from './AllCategories.module.css';
 import Spinner from '../common/spinner/Spinner';
+import { Link } from 'react-router-dom';
 
 function AllCategories() {
     const [categories, setCategories] = useState([]);
@@ -11,7 +12,7 @@ function AllCategories() {
     useEffect(() => {
         setShowSpinner(true);
 
-        getAllCategories()
+        getAllCategoriesPublic()
             .then(result => {
                     const data = Object.values(result);
                     setCategories(data);
@@ -23,15 +24,26 @@ function AllCategories() {
             });
     }, [])
 
+    const onButtonClick = () => {
+
+    }
+
     return (
         <div className={styles.allCategories}>
             {showSpinner &&
                 <Spinner />
             }
-            <ul>
+            <ul >
                 {categories.map(category => 
-                        <li key={category.id} >
-                            {category.category}
+                        <li key={category._id}>
+                            <details>
+                                <summary>
+                                    <span>{category.category}</span>
+                                    <Link to={'/categories/${category._id}/quizzes'} onClick={onButtonClick}>Quizzes</Link>
+                                </summary> 
+                                
+                                <p>{category.description}</p> 
+                            </details>
                         </li>
                     )
                 }

@@ -24,7 +24,7 @@ function HomePublic() {
                 </h1>
                 
                 <div className={styles.categories}>
-                    <h2>All quiz topics</h2>   
+                    <h2>Quiz topics</h2>   
                     <AllCategories />
                 </div>
             </div>

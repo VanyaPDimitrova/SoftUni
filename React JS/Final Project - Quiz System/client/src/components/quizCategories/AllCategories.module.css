@@ -2,6 +2,37 @@
     min-height: 10em;
 }
 
+.allCategories ul {
+    list-style: none;
+    padding-left: 2em;
+}
+
 .allCategories li {
     color: var(--blue);
+    max-width: 46em;
+    margin-bottom: 0.5em;
+}
+
+.allCategories li details summary {
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allCategories li p {
+    padding-left: 0.9em;
+    margin-top: 0.1em;
+    max-width: 34em;
+}
+
+.allCategories li button {
+    background-color: transparent;
+    font-size: 1.1em;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.allCategories li button:hover {
+    color: var(--black);
 }
