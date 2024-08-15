@@ -38,7 +38,7 @@ function Register({ closeModal }) {
             })
             .catch(err => setError(err));
     };
-
+    
     
     return (
         <div className={styles.container}>
@@ -85,7 +85,7 @@ function Register({ closeModal }) {
 
                 {error ? (
                     <div className={styles.error}>
-                        <p>{error}</p>
+                        <p>{error.message}</p>
                     </div>
                 ): null}
 
