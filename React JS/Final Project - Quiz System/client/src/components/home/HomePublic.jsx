@@ -1,5 +1,6 @@
-import AllCategories from '../quizCategories/AllCategories';
+import AllCategoriesPublic from '../quizCategories/AllCategoriesPublic';
 import styles from './Home.module.css';
+
 
 function HomePublic() {
 
@@ -25,7 +26,7 @@ function HomePublic() {
                 
                 <div className={styles.categories}>
                     <h2>Quiz topics</h2>   
-                    <AllCategories />
+                    <AllCategoriesPublic />
                 </div>
             </div>
         </section>

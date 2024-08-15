@@ -26,13 +26,14 @@
     max-width: 34em;
 }
 
-.allCategories li button {
+.allCategories li a {
     background-color: transparent;
     font-size: 1.1em;
     color: var(--blue);
     cursor: pointer;
+    text-decoration: none;
 }
 
-.allCategories li button:hover {
+.allCategories li a:hover {
     color: var(--black);
 }

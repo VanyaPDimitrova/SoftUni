@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
-
-import { getAllCategoriesPublic } from '../../requests/categories-requests';
-import styles from './AllCategories.module.css';
-import Spinner from '../common/spinner/Spinner';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function AllCategories() {
+import { AuthContext } from '../../context/AuthContext';
+import { getAllCategoriesPublic } from '../../requests/categories-requests';
+
+import Spinner from '../common/spinner/Spinner';
+
+import styles from './AllCategories.module.css';
+
+function AllCategoriesPublic() {
     const [categories, setCategories] = useState([]);
-    const [showSpinner, setShowSpinner] = useState(false);
+    const [showSpinner, setShowSpinner] = useState(false);    
 
     useEffect(() => {
         setShowSpinner(true);
@@ -22,11 +25,7 @@ function AllCategories() {
                 setShowSpinner(false);
                 console.log(err);
             });
-    }, [])
-
-    const onButtonClick = () => {
-
-    }
+    }, []);
 
     return (
         <div className={styles.allCategories}>
@@ -39,7 +38,7 @@ function AllCategories() {
                             <details>
                                 <summary>
                                     <span>{category.category}</span>
-                                    <Link to={'/categories/${category._id}/quizzes'} onClick={onButtonClick}>Quizzes</Link>
+                                    <Link to={`/categories/${category._id}/${category.category}/quizzes`}>Quizzes</Link>
                                 </summary> 
                                 
                                 <p>{category.description}</p> 
@@ -52,4 +51,4 @@ function AllCategories() {
     );
 }
 
-export default AllCategories;
+export default AllCategoriesPublic;
