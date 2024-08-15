@@ -1,62 +1,17 @@
 {
-    "1": {
-        "id": "1", 
-        "category": "SQL", 
-        "author_id": "1"
+    "e9c0b2c6-24b7-484c-a59c-ae0d076e1426": {
+        "_id": "e9c0b2c6-24b7-484c-a59c-ae0d076e1426",
+        "category": "SQL",
+        "description": "Structured Query Language is a domain-specific language used to manage data, especially in a relational database management system."
     },
-    "2": {
-        "id": "2", 
-        "category": "JavaScript", 
-        "author_id": "1"
+    "a44ddde5-802b-4f0f-9736-f75b6f0dc29b": {
+        "_id": "a44ddde5-802b-4f0f-9736-f75b6f0dc29b",
+        "category": "JavaScript",
+        "description": "JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS."
     },
-    "3": {
-        "id": "3", 
-        "category": "Java", 
-        "author_id": "1"
-    },
-    "4": {
-        "id": "4", 
-        "category": "C++", 
-        "author_id": "1"
-    },
-    "5": {
-        "id": "5", 
-        "category": "React", 
-        "author_id": "1"
-    },
-    "10": {
-        "id": "10", 
-        "category": "Python", 
-        "author_id": "1"
-    },
-    "13": {
-        "id": "13", 
-        "category": "Ada", 
-        "author_id": "1"
-    },
-    "14": {
-        "id": "14", 
-        "category": "C#", 
-        "author_id": "1"
-    },
-    "17": {
-        "id": "17", 
-        "category": "Angular", 
-        "author_id": "3"
-    },
-    "18": {
-        "id": "18", 
-        "category": "PL/SQL", 
-        "author_id": "3"
-    },
-    "19": {
-        "id": "19", 
-        "category": "PHP", 
-        "author_id": "26"
-    },
-    "20": {
-        "id": "20", 
-        "category": "MySQL", 
-        "author_id": "26"
+    "85af058f-03b6-4902-9edb-729650044247": {
+        "_id": "85af058f-03b6-4902-9edb-729650044247",
+        "category": "React",
+        "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components by Facebook Inc."
     }
 }

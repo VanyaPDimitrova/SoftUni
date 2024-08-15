@@ -1642,7 +1642,82 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        categories: {
+            "e9c0b2c6-24b7-484c-a59c-ae0d076e1426": {
+                "_id": "e9c0b2c6-24b7-484c-a59c-ae0d076e1426",
+                "category": "SQL",
+                "description": "Structured Query Language is a domain-specific language used to manage data, especially in a relational database management system.",
+                "_createdOn": 1723719293945,
+                "_updatedOn": 1723721903632,
+                "_ownerId": "85af058f-03b6-4902-9edb-729650044247"
+            },
+            "a44ddde5-802b-4f0f-9736-f75b6f0dc29b": {
+                "_id": "a44ddde5-802b-4f0f-9736-f75b6f0dc29b",
+                "category": "JavaScript",
+                "description": "JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS.",
+                "_createdOn": 1723720210483,
+                "_ownerId": "85af058f-03b6-4902-9edb-729650044247"
+            },
+            "85af058f-03b6-4902-9edb-729650044247": {
+                "_id": "97ed41b7-c90f-4404-b13e-b0d72bdeabc3",
+                "category": "React",
+                "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components by Facebook Inc.",
+                "_createdOn": 1723722057747,
+                "_ownerId": "85af058f-03b6-4902-9edb-729650044247",
+            }
+        },
+        quizes: {
+            "ab50f669-4f86-4cbe-9fa9-7704e4290215": {
+                "_ownerId": "e44b1a91-e460-4922-b972-14a3a014e73c",
+                "_categoryId": "85af058f-03b6-4902-9edb-729650044247",
+                "titlr": "React Level 1",
+                "questions": [],
+                "_createdOn": 1723723008775,
+                "_id": "ab50f669-4f86-4cbe-9fa9-7704e4290215"
+            }
+        },
+        questions: {
+            "10a03f13-c9f1-4720-9668-27c121d07a4a": {
+                "_ownerId": "91ffec08-5737-46db-a2d2-f6210f1c3053",
+                "_quizId": "ab50f669-4f86-4cbe-9fa9-7704e4290215",
+                "questions": "What is ReactJS primarily used for?",
+                "answers": {},
+                "_createdOn": 1723723556188,
+                "_id": "10a03f13-c9f1-4720-9668-27c121d07a4a"
+            }
+        },
+        answers: {
+            "2d7bf5ba-9b58-4845-b0e7-a01a4df44d61": {
+                "_ownerId": "6e7058eb-7df2-46eb-a235-d5d8f480b602",
+                "_questionId": "ab50f669-4f86-4cbe-9fa9-7704e4290215",
+                "answer": "Server-side scripting",
+                "_createdOn": 1723724832825,
+                "_id": "2d7bf5ba-9b58-4845-b0e7-a01a4df44d61"
+            },
+            "c2bced79-fb54-4ba0-a478-d36a244917a2": {
+                "_ownerId": "6e7058eb-7df2-46eb-a235-d5d8f480b602",
+                "_questionId": "ab50f669-4f86-4cbe-9fa9-7704e4290215",
+                "answer": "Building user interfaces",
+                "_createdOn": 1723724847092,
+                "_id": "c2bced79-fb54-4ba0-a478-d36a244917a2"
+            },
+            "0c2fef52-32a6-4473-a28e-fa095732836c": {
+                "_ownerId": "6e7058eb-7df2-46eb-a235-d5d8f480b602",
+                "_questionId": "ab50f669-4f86-4cbe-9fa9-7704e4290215",
+                "answer": "Database management",
+                "_createdOn": 1723724858425,
+                "_id": "0c2fef52-32a6-4473-a28e-fa095732836c"
+            },
+            "c9055457-7343-4f56-83dd-676436a86b6f": {
+                "_ownerId": "6e7058eb-7df2-46eb-a235-d5d8f480b602",
+                "_questionId": "ab50f669-4f86-4cbe-9fa9-7704e4290215",
+                "answer": "Graphic design",
+                "_createdOn": 1723724870112,
+                "_id": "c9055457-7343-4f56-83dd-676436a86b6f"
+            }
+        }
+
     };
     var rules$1 = {
     	users: {
