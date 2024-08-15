@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 
 import { STUDENT_ROLE, TEACHER_ROLE } from '../../common/constants';
-import { register } from '../requests/auth-requester';
+import { register } from '../../requests/auth-requester';
 import { AuthContext } from '../../context/AuthContext';
 
 import styles from './LogInRegister.module.css';
@@ -83,11 +83,11 @@ function Register({ closeModal }) {
                     </div>
                 </div>
 
-                {error && 
+                {error ? (
                     <div className={styles.error}>
                         <p>{error}</p>
                     </div>
-                }
+                ): null}
 
                 <div className={styles.buttons}>
                     <button type="submit" className={styles.submitBtn}>Register</button>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getAllCategories } from '../requests/categories-requests';
+
+import { getAllCategories } from '../../requests/categories-requests';
 import styles from './AllCategories.module.css';
 import Spinner from '../common/spinner/Spinner';
 

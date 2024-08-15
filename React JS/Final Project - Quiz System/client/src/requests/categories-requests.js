@@ -1,4 +1,5 @@
-import MAIN_URL from '../../common/MainUrl';
+
+import MAIN_URL from './../common/MainUrl';
 
 export const getAllCategories = () => {
   return fetch(`${MAIN_URL}/categories`)
@@ -10,7 +11,7 @@ export const createCategory = (data) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token()}`,
+      'X-Authorization': `Bearer ${token()}`,
     },
     body: JSON.stringify(data)
   })
