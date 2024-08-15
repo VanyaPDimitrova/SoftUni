@@ -4,29 +4,26 @@ function DeleteCategory({
     categoryToDelete,
 }) {
     return (
-        <div className="confirm-container">
+        <div className="containerDelete">
             <p>Are you sure you want to delete <strong>{`${categoryToDelete.category}`}</strong> category?</p>
 
             <div className="actions">
-                <div id="form-actions">
-                    <button 
-                        id="action-save" 
-                        className="btn" 
-                        type="submit" 
-                        onClick={deleteCategory}
-                    >
-                        Delete
-                    </button>
+                <button 
+                    id="action-delete" 
+                    className="btn" 
+                    type='submit'
+                    onClick={deleteCategory}
+                >
+                    Delete
+                </button>
 
-                    <button 
-                        id="action-cancel" 
-                        className="btn" 
-                        type="button"
-                        onClick={closeModal}
-                    >
-                        Cancel
-                    </button>
-                </div>
+                <button 
+                    id="action-cancel" 
+                    className="btn"
+                    onClick={closeModal}
+                >
+                    Cancel
+                </button>
             </div>
         </div>
     );

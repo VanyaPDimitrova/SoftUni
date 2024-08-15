@@ -8,9 +8,9 @@ import Spinner from '../common/spinner/Spinner';
 
 import styles from './AllCategories.module.css';
 import DeleteCategoryModal from './DeleteCategoryModal';
+import CreateCategoryModal from './CreateCategoryModal';
 
 function AllCategoriesPrivate() {
-    const { isAuthenticated, role } = useContext(AuthContext);
     const [categories, setCategories] = useState([]);
     const [showSpinner, setShowSpinner] = useState(false);
     
@@ -49,10 +49,8 @@ function AllCategoriesPrivate() {
 
 
 // Create Category
-    const createCategory = () => {
-        console.log('createCategory');
-        
-    }
+    const [isCreateCategoryModalOpen, setIsCreateCategoryModalOpen] = useState(false);
+
 
     return (
         <>
@@ -80,7 +78,7 @@ function AllCategoriesPrivate() {
                     }
                 </ul>
 
-                <button onClick={createCategory}>Create category</button>
+                <button onClick={() => setIsCreateCategoryModalOpen(true)}>Create category</button>
             </div>
 
                             
@@ -89,6 +87,13 @@ function AllCategoriesPrivate() {
                     closeDeleteCategoryModal={() => setIsDeleteCategoryModalOpen(false)}
                     deleteCategory={deleteCategory}
                     categoryToDelete={categoryToDelete} 
+                />
+            }
+
+            {isCreateCategoryModalOpen &&
+                <CreateCategoryModal 
+                    closeCreateCategoryModal={() => setIsCreateCategoryModalOpen(false)}
+                    setCategories={setCategories}
                 />
             }
         </>

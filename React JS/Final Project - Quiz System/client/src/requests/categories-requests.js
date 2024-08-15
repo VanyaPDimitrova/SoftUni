@@ -17,7 +17,7 @@ export const getAllCategoriesPrivate = () => {
     .then((res) => res.json());
 };
 
-export const createCategory = (data) => {
+export const createNewCategory = (data) => {
   return fetch(`${MAIN_URL_PRIVATE}/categories`, {
     method: 'POST',
     headers: {
