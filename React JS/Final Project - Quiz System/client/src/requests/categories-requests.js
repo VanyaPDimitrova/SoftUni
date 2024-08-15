@@ -18,7 +18,7 @@ export const getAllCategoriesPrivate = () => {
 };
 
 export const createCategory = (data) => {
-  return fetch(`${MAIN_URL}/categories`, {
+  return fetch(`${MAIN_URL_PRIVATE}/categories`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const createCategory = (data) => {
 };
 
 export const updateCategory = (data, categoryId) => {
-  return fetch(`${MAIN_URL}/categories/${categoryId}`, {
+  return fetch(`${MAIN_URL_PRIVATE}/categories/${categoryId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const updateCategory = (data, categoryId) => {
 };
 
 export const deleteCategoryById = (categoryId) => {
-  return fetch(`${MAIN_URL}/categories/${categoryId}`, {
+  return fetch(`${MAIN_URL_PRIVATE}/categories/${categoryId}`, {
     method: 'DELETE',
     headers: {
       'X-Authorization': `${accessToken()}`,
