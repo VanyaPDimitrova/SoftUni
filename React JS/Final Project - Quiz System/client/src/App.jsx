@@ -6,6 +6,7 @@ import Home from './components/home/Home';
 import Contacts from './components/contacts/Contacts';
 import Footer from './components/footer/Footer';
 import { AuthContext } from './context/AuthContext';
+import CategoryQuizzes from './components/quizzes/CategoryQuizzes';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
     const changeAuthState = (state) => {
         localStorage.setItem('accessToken', state.accessToken);
-        
+
         setAuthState(state);
     }
 
@@ -35,6 +36,8 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/Contacts' element={<Contacts />} />
+                        <Route path='/categories/:categoryId/:category/quizzes' element={<CategoryQuizzes />} />
+                        <Route path='*' element={<Home />} />                    
                     </Routes>
                 </main>
             <Footer />

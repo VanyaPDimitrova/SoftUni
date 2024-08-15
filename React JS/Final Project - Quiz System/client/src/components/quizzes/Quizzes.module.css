@@ -1,0 +1,59 @@
+.home {
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.9);
+    background-blend-mode: lighten;
+}
+
+.public {
+    background-image: url(../home/public.jpg);
+    background-color: rgba(255,255,255,0.8);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5.5em;
+}
+
+.container h1 {
+    font-size: 4.2em;
+    align-self: center;
+    margin: 0.6em 1.6em 0.8em 0;
+}
+
+.categoryQuizzes {
+    margin-left: 8em;
+}
+
+.categoryQuizzes ul {
+    list-style: none;
+    padding-left: 2em;
+}
+
+.categoryQuizzes li {
+    max-width: 46em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.categoryQuizzes li h3 {
+    color: var(--blue);
+    margin: 0;
+}
+
+.categoryQuizzes li a {
+    background-color: transparent;
+    font-size: 1.1em;
+    color: var(--blue);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.categoryQuizzes li a:hover {
+    color: var(--black);
+}
+
