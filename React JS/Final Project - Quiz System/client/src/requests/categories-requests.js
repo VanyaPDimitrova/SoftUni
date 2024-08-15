@@ -1,8 +1,9 @@
 import accessToken from '../services/get-token';
 import MAIN_URL from './../common/MainUrl';
+const MAIN_URL_PUBLIC = `${MAIN_URL}/jsonstore`;
 
-export const getAllCategories = () => {
-  return fetch(`${MAIN_URL}/categories`)
+export const getAllCategoriesPublic = () => {
+  return fetch(`${MAIN_URL_PUBLIC}/categories`)
     .then((res) => res.json());
 };
 

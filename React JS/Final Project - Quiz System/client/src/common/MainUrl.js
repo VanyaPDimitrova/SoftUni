@@ -1,3 +1,3 @@
-const MAIN_URL = 'http://localhost:3030/jsonstore';
+const MAIN_URL = 'http://localhost:3030';
 
 export default MAIN_URL;
