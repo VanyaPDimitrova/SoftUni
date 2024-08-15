@@ -1,4 +1,4 @@
-
+import accessToken from '../services/get-token';
 import MAIN_URL from './../common/MainUrl';
 
 export const getAllCategories = () => {
@@ -11,7 +11,7 @@ export const createCategory = (data) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Authorization': `Bearer ${token()}`,
+      'X-Authorization': `${accessToken()}`,
     },
     body: JSON.stringify(data)
   })
@@ -23,7 +23,7 @@ export const updateCategory = (data, categoryId) => {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token()}`,
+      'X-Authorization': `${accessToken()}`,
     },
     body: JSON.stringify(data)
   })
@@ -34,7 +34,7 @@ export const deleteCategoryById = (categoryId) => {
   return fetch(`${MAIN_URL}/categories/${categoryId}`, {
     method: 'DELETE',
     headers: {
-      'Authorization': `Bearer ${token()}`,
+      'X-Authorization': `${accessToken()}`,
     },
   })
     .then((res) => res.json());
