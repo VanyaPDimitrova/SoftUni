@@ -1667,14 +1667,20 @@
                 "_ownerId": "85af058f-03b6-4902-9edb-729650044247",
             }
         },
-        quizes: {
+        quizzes: {
             "ab50f669-4f86-4cbe-9fa9-7704e4290215": {
                 "_ownerId": "e44b1a91-e460-4922-b972-14a3a014e73c",
                 "_categoryId": "85af058f-03b6-4902-9edb-729650044247",
-                "titlr": "React Level 1",
-                "questions": [],
+                "title": "React Level 1",
                 "_createdOn": 1723723008775,
                 "_id": "ab50f669-4f86-4cbe-9fa9-7704e4290215"
+            },
+            "a7c37a72-8e85-425e-9988-f7a440129979": {
+                "_ownerId": "ea77a23b-2388-4871-9bf2-e0403d4f7909",
+                "_categoryId": "e9c0b2c6-24b7-484c-a59c-ae0d076e1426",
+                "title": "SQL Level 1",
+                "_createdOn": 1723735986808,
+                "_id": "a7c37a72-8e85-425e-9988-f7a440129979"
             }
         },
         questions: {
